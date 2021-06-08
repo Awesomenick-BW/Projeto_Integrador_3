@@ -4,7 +4,7 @@ body {
 }
 
 h1 {
-    text-align: center; 
+    text-align: center;
 }
 
 .image-container {
@@ -13,20 +13,36 @@ h1 {
     text-align: center;
     max-width: 100%;
     height: auto;
+    margin: 0;
+    padding: 0;
+}
+.image-cfg {
+    opacity: 0.3;
+    width: 100%;
+    height: fit-content;
+    display: flex;
+}
+
+.image-container {
+    background-color: black;
+    position: relative;
+    text-align: center;
+    width: 100%;
+    height: auto;
 }
 
 .text-over-img {
     position: absolute;
-    top: 50%;
+    top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
     font-size: 3vw;
     font-family: "Lucida Console", Courier, monospace;
   }
 
-.position {
+.btn-position {
     position: absolute;
-    top: 80%;
+    top: 85%;
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
@@ -40,10 +56,11 @@ h1 {
     font-family: "Lucida Console", Courier, monospace;
     text-transform: uppercase;
     padding: 12px 20px;
-    min-width: 200px;
+    min-width: 100px;
     margin: 10px;
     cursor: pointer;
     transition: color 0.4s linear;
+    width: 200px;
 }
 
 .btn:hover {

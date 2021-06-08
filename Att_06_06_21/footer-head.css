@@ -1,0 +1,40 @@
+.footer{
+    margin: 0;
+    padding-bottom: 20px;
+    padding-top: 15px;
+    background-color: #000d1a;
+    text-align: center;
+}
+
+.icons-ul{
+    display: flex;
+    margin: auto;
+}
+
+.icons-li{
+    display: flex;
+}
+
+.icons-li a{
+    padding: 10px 40px;
+}
+
+.page-links-ul{
+    display: flex;
+}
+
+.page-links-li{
+    display: flex;
+}
+
+.page-links-li a {
+    padding: 0px 15px;
+    font-size: 15px;
+    text-decoration: none;
+    color: white;
+    transition: all 0.5s;
+}
+
+.page-links-li a:hover{
+    color: #00b3b3;
+}
