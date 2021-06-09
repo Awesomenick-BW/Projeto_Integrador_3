@@ -12,23 +12,13 @@ h1 {
     position: relative;
     text-align: center;
     max-width: 100%;
-    height: auto;
-    margin: 0;
-    padding: 0;
+    max-height: 20%;
 }
 .image-cfg {
     opacity: 0.3;
     width: 100%;
     height: fit-content;
     display: flex;
-}
-
-.image-container {
-    background-color: black;
-    position: relative;
-    text-align: center;
-    width: 100%;
-    height: auto;
 }
 
 .text-over-img {
@@ -56,6 +46,7 @@ h1 {
     font-family: "Lucida Console", Courier, monospace;
     text-transform: uppercase;
     padding: 12px 20px;
+    width: 200px;
     min-width: 100px;
     margin: 10px;
     cursor: pointer;
