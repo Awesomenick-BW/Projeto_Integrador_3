@@ -1,14 +1,27 @@
 .footer{
     margin: 0;
+    padding: 0;
     padding-bottom: 20px;
-    padding-top: 15px;
     background-color: #000d1a;
     text-align: center;
+    top: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+#hr-footer{
+    margin: 0; 
+    padding: 0; 
+    background-color:#00b3b3; 
+    height: 3px;
+    border: 0;
 }
 
 .icons-ul{
     display: flex;
-    margin: auto;
+    margin: 15px 15px;
+    justify-content: center;
+    padding: 0;
 }
 
 .icons-li{
@@ -16,11 +29,13 @@
 }
 
 .icons-li a{
-    padding: 10px 40px;
+    padding-left: 55px;
+    padding-right: 55px;
 }
 
 .page-links-ul{
     display: flex;
+    justify-content: center;
 }
 
 .page-links-li{
@@ -28,8 +43,8 @@
 }
 
 .page-links-li a {
-    padding: 0px 15px;
-    font-size: 15px;
+    padding: 0px 25px;
+    font-size: 17.5px;
     text-decoration: none;
     color: white;
     transition: all 0.5s;
@@ -37,4 +52,9 @@
 
 .page-links-li a:hover{
     color: #00b3b3;
+}
+
+.icons{
+    padding-left: 17.5%;
+    padding-right: 17.5%;
 }
