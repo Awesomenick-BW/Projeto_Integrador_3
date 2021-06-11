@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+    <link rel="stylesheet" type="text/css" href="cadastro.css">
+    <link rel="stylesheet" type="text/css" href="footer-head.css">
+
+</head>
+<body>
+    <main>
+        <fieldset class="box">
+            <legend>Cadastre-se</legend>
+            <br>
+            <form>
+                <label for="name">Nome de Usuário:</label>
+                <br>
+                <input type="text" name="nome" required="" placeholder="Insira seu nome" size="26">
+                <br>
+                <label for="senha">Senha:</label>
+                <br>
+                <input type="password" name="senha" required="" placeholder="Senha">
+                <br>
+                <label for="email">Email:</label>
+                <br>
+                <input type="email" name="hotmail" required="" placeholder="johndoe@*****.com" size="26">
+                <hr>
+                <label>Sexo: </label>
+                <br>
+                <label for="mas">Masculino</label>
+                <input required="" type="radio" name="sexo" class="radio" id="mas"> 
+                <br>
+                <label for="femi">Feminino</label>
+                <input required="" type="radio" name="sexo" class="radio" id="femi">
+                <hr>
+                <label for="escolaridade">Nível de escolaridade</label>
+                <br>
+                <input id="escolaridade" list="escolaridade">
+                <datalist id="escolaridade">
+                    <option value="Ensino Fundamental"></option>
+                    <option value="Ensino Médio"></option>
+                    <option value="Graduação"></option>
+                    <option value="Pós-graduação"></option>
+                    <option value="Mestrado"></option>
+                    <option value="Doutorado"></option>
+                </datalist>
+                <hr>
+                <label for="estado">Estado que reside</label>
+                <br>
+                <input id="estado" list="estado">
+                <datalist id="estado">
+                    <option value="AC"></option>
+                    <option value="AL"></option>
+                    <option value="AP"></option>
+                    <option value="AM"></option>
+                    <option value="BA"></option>
+                    <option value="CE"></option>
+                    <option value="DF"></option>
+                    <option value="ES"></option>
+                    <option value="GO"></option>
+                    <option value="MA"></option>
+                    <option value="MT"></option>
+                    <option value="MS"></option>
+                    <option value="MG"></option>
+                    <option value="PA"></option>
+                    <option value="PB"></option>
+                    <option value="PR"></option>
+                    <option value="PE"></option>
+                    <option value="PI"></option>
+                    <option value="RJ"></option>
+                    <option value="RN"></option>
+                    <option value="RS"></option>
+                    <option value="RO"></option>
+                    <option value="RR"></option>
+                    <option value="SC"></option>
+                    <option value="SP"></option>
+                    <option value="SE"></option>
+                    <option value="TO"></option>
+                </datalist>
+                <hr>
+                <div>
+                    <input type="submit" name="enviar" value="Enviar">
+                    <input type="reset" name="resetar" value="Limpar" onclick="resetado()">
+                </div>
+            </form>
+        </fieldset>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="footer">
+        <hr id="hr-footer">
+
+        <!-- Ícones das redes sociais -->
+        <div class="icons">
+            <ul class="icons-ul">
+                <li class="icons-li">
+                    <a href="#">
+                        <img src="https://findicons.com/files/icons/2830/clean_social_icons/250/facebook.png" width="40.69px">
+                    </a>
+                </li>
+                <li class="icons-li">
+                    <a href="#">
+                        <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" width="45px">
+                    </a>
+                </li>
+                <li class="icons-li">
+                    <a href="#">
+                        <img src="https://i.pinimg.com/originals/8b/ed/09/8bed099ffbf95985d5184831b0c05dcc.png" width="45px">
+                    </a>
+                </li>
+            </ul>
+        </div>
+
+        <!-- Links dos outras páginas web -->
+        <div class="page-links">
+            <ul class="page-links-ul">
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Home</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Notícias</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Portal do Aluno</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Portal do Professor</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Cadastro</a>
+                    </strong>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+</body>
+</html>
