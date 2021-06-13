@@ -8,35 +8,52 @@
 
 </head>
 <body>
+    <!-- Corpo da página -->
     <main>
+        <!-- Caixa do formulário -->
         <fieldset class="box">
             <legend>Cadastre-se</legend>
             <br>
+
+            <!-- Formulário -->
             <form>
                 <label for="name">Nome de Usuário:</label>
                 <br>
                 <input type="text" name="nome" required="" placeholder="Insira seu nome" size="26">
                 <br>
+
                 <label for="senha">Senha:</label>
                 <br>
                 <input type="password" name="senha" required="" placeholder="Senha">
                 <br>
+
                 <label for="email">Email:</label>
                 <br>
-                <input type="email" name="hotmail" required="" placeholder="johndoe@*****.com" size="26">
+                <input type="email" name="hotmail" required="" placeholder="seuemail@*****.com" size="26">
                 <hr>
+
                 <label>Sexo: </label>
                 <br>
                 <label for="mas">Masculino</label>
-                <input required="" type="radio" name="sexo" class="radio" id="mas"> 
+                <input required="" type="radio" name="sexo" id="mas"> 
                 <br>
                 <label for="femi">Feminino</label>
-                <input required="" type="radio" name="sexo" class="radio" id="femi">
+                <input required="" type="radio" name="sexo" id="femi">
                 <hr>
+
+                <label>Profissão: </label>
+                <br>
+                <label for="alu">Aluno</label>
+                <input type="radio" name="profissao" required="" id="alu">
+                <br>
+                <label for="prof">Professor</label>
+                <input type="radio" name="profissao" required="" id="prof">
+                <hr>
+
                 <label for="escolaridade">Nível de escolaridade</label>
                 <br>
-                <input id="escolaridade" list="escolaridade">
-                <datalist id="escolaridade">
+                <input id="escolaridade" list="escolaridades">
+                <datalist id="escolaridades">
                     <option value="Ensino Fundamental"></option>
                     <option value="Ensino Médio"></option>
                     <option value="Graduação"></option>
@@ -45,10 +62,11 @@
                     <option value="Doutorado"></option>
                 </datalist>
                 <hr>
+
                 <label for="estado">Estado que reside</label>
                 <br>
-                <input id="estado" list="estado">
-                <datalist id="estado">
+                <input id="estado" list="estados">
+                <datalist id="estados">
                     <option value="AC"></option>
                     <option value="AL"></option>
                     <option value="AP"></option>
@@ -78,10 +96,13 @@
                     <option value="TO"></option>
                 </datalist>
                 <hr>
+
+                <!-- Botões -->
                 <div>
                     <input type="submit" name="enviar" value="Enviar">
-                    <input type="reset" name="resetar" value="Limpar" onclick="resetado()">
+                    <input type="reset" name="resetar" value="Limpar">
                 </div>
+
             </form>
         </fieldset>
     </main>
