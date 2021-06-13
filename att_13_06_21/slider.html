@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
+    <link rel="stylesheet" href="slider.css">
+    <title>Slider</title>
+</head>
+<body>
+    <div class="format">
+        <div class="img-slider">
+            <div class="slide active">
+            <img src="imgs1.jpg" alt="">
+                <div class="info">
+                    <a>Apenas 2% dos alertas de desmatamento foram atendidos</a>
+                </div>
+            </div>
+
+            <div class="slide">
+            <img src="imgs2.jpg" alt="">
+                <div class="info">
+                    <a>Aborto inseguro é uma grande causa de morte materna</a>
+                </div>
+            </div>
+
+            <div class="slide">
+            <img src="imgs3.jpg" alt="">
+                <div class="info">
+                    <a>CPI debate holocausto em discussão sobre pandemia</a>
+                </div>
+            </div>
+
+            <div class="slide">
+            <img src="imgs4.jpg" alt="">
+                <div class="info">
+                    <a>57% da população admitem a pena de morte no Brasil</a>
+                </div>
+            </div>
+        <div class="navigation">
+            <div class="btn active"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+            <div class="btn"></div>
+        </div>
+        
+        </div>
+    </div>
+    
+
+    <script type="text/javascript">
+    var slides = document.querySelectorAll('.slide');
+    var btns = document.querySelectorAll('.btn');
+    let currentSlide = 1;
+  
+    // Javascript for image slider manual navigation
+    var manualNav = function(manual){
+    slides.forEach((slide) => {
+        slide.classList.remove('active');
+  
+        btns.forEach((btn) => {
+        btn.classList.remove('active');
+        });
+    });
+  
+    slides[manual].classList.add('active');
+    btns[manual].classList.add('active');
+    }
+  
+    btns.forEach((btn, i) => {
+    btn.addEventListener("click", () => {
+        manualNav(i);
+        currentSlide = i;
+    });
+    });
+  
+    // Javascript for image slider autoplay navigation
+    var repeat = function(activeClass){
+    let active = document.getElementsByClassName('active');
+    let i = 1;
+  
+    var repeater = () => {
+        setTimeout(function(){
+        [...active].forEach((activeSlide) => {
+            activeSlide.classList.remove('active');
+        });
+  
+        slides[i].classList.add('active');
+        btns[i].classList.add('active');
+        i++;
+  
+        if(slides.length == i){
+        i = 0;
+        }
+        if(i >= slides.length){
+        return;
+        }
+        repeater();
+    }, 7000);
+    }
+    repeater();
+    }
+    repeat();
+    </script>
+
+</body>
+</html>
