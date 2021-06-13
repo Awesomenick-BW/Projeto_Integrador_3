@@ -5,8 +5,7 @@
     background-color: #000d1a;
     text-align: center;
     top: 100%;
-    position: absolute;
-    width: 100%;
+    width: 100%; 
 }
 
 #hr-footer{
