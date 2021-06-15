@@ -1,5 +1,6 @@
 body {
     margin: 0;
+    padding: 0;
     background-color: #293d3d;
 }
 
@@ -25,6 +26,7 @@ fieldset {
     text-align: center;
     color: white;
     margin: 20px;
+    margin-top: 100px;
 }
 
 input {
