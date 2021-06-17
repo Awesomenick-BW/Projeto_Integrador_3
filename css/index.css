@@ -35,7 +35,7 @@ body {
     top: 40%;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 3vw;
+    font-size: 2.5vw;
     font-family: "Lucida Console", Courier, monospace;
   }
 
@@ -56,11 +56,9 @@ body {
     text-transform: uppercase;
     padding: 12px 20px;
     width: 200px;
-    min-width: 100px;
     margin: 10px;
     cursor: pointer;
     transition: color 0.4s linear;
-    width: 200px;
 }
 
 .btn:hover {
@@ -88,4 +86,13 @@ body {
 
 .btn1:hover::before {
     transform: scaleX(1);
+}
+
+@media (max-width: 640px){
+    .btn {
+        width: 120px;
+        height: 35px;
+        font-size: 10px;
+    }
+
 }

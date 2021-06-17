@@ -7,35 +7,41 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1">
     <link rel="stylesheet" type="text/css" href="../css/slider.css">
     <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
     <title>Homepage</title>
 </head>
 <body>
 
-    <!-- Barra lateral -->
-    <input type="checkbox" id="check">
+    <div class="block-format"> 
+        <input type="checkbox" id="check">
+        <!--header area start-->
+        <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area">
+            <h3>Teste <span>Teste</span></h3>
+        </div>
+        <div class="right_area">
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+        </header>
+        <!--header area end-->
+        <!--sidebar start-->
+        <div class="sidebar">
+        <div class="centered-profile">
+            <img src="../img/guest_user.jpg" class="profile_image" alt="">
+            <h4>Guest</h4>
+        </div>
+        <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="#"><i class="fas fa-newspaper"></i><span>Notícias</span></a>
+        <a href="#"><i class="fas fa-user-graduate"></i><span>Portal do Aluno</span></a>
+        <a href="#"><i class="fas fa-user-tie"></i><span>Portal do Professor</span></a>
+        <a href="cadastro.html"><i class="fas fa-sign-in-alt"></i><span>Cadastro</span></a>
+        <a href="#"><i class="fas fa-info-circle"></i><span>Sobre</span></a>
+        </div>
+        <!--sidebar end-->
 
-    <header>
-      <label for="check">
-        <i class="fas fa-bars" id="sidebar_btn"></i>
-      </label>
-      <div class="left_area">
-        <h3> TÍTULO <span> TÍTULO </span></h3>
-      </div>
-      <div class="right_area">
-        <a href="#" class="login">Login</a>
-      </div>
-    </header>
-
-    <div class="sidebar">
-        <img src="../img/guest-user-250x250.jpg" class="profile_image" alt="guest">
-        <h4>Guest</h4>
-        
-        <a href="#"></i><span>Home</span></a>
-        <a href="#"></i><span>Notícias</span></a>
-        <a href="#"></i><span>Portal do Aluno</span></a>
-        <a href="#"></i><span>Portal do Professor</span></a>
-        <a href="#"></i><span>Cadastro</span></a>
-        <a href="#"></i><span>Sobre</span></a>
     </div>
 
     <div class="image-cfg"></div>
