@@ -1,6 +1,8 @@
 body {
 	margin: 0;
 }
+
+/* Set a background who will fill the screen, besides center horizontally and vertically */
 .body-main{
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
@@ -10,6 +12,8 @@ body {
 	justify-content: center;
 	align-items: center;
 }
+
+/* Set a background, height and width to the form */
 .main-form{
 	width: 350px;
 	height: 500px;
@@ -21,11 +25,14 @@ body {
 #chk{
 	display: none;
 }
+
 .signup{
 	position: relative;
 	width:100%;
 	height: 100%;
 }
+
+/* Set a color, font size, margin, a color transition and centralize */
 form label{
 	color: #fff;
 	font-size: 2.3em;
@@ -36,6 +43,8 @@ form label{
 	cursor: pointer;
 	transition: .5s ease-in-out;
 }
+
+/* Set a widht, height, background, margin, padding, border and centralize the inputs */
 form input{
 	width: 60%;
 	height: 20px;
@@ -48,6 +57,8 @@ form input{
 	outline: none;
 	border-radius: 5px;
 }
+
+/* Width, height, margin, color, background, font size, border and a color transition */
 form button{
 	width: 60%;
 	height: 40px;
@@ -65,9 +76,13 @@ form button{
 	transition: .2s ease-in;
 	cursor: pointer;
 }
+
+/* Change the background when the cursor is over the button */
 form button:hover{
 	background: #1f7a1f;
 }
+
+/* Set a height, background, border and a transition */
 .login{
 	height: 460px;
 	background: #cccccc;
@@ -75,11 +90,14 @@ form button:hover{
 	transform: translateY(-180px);
 	transition: .8s ease-in-out;
 }
+
+/* Set a color and a scale in the label */
 .login label{
 	color: #248f8f;
 	transform: scale(.6);
 }
 
+/* Make some effects */
 #chk:checked ~ .login{
 	transform: translateY(-500px);
 }
