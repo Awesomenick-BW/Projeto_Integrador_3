@@ -33,7 +33,7 @@ header{
 
 .logout_btn{
     padding: 5px;
-    background: #00b3b3;
+    background: #29a329;
     text-decoration: none;
     float: right;
     margin-top: -30px;
@@ -46,7 +46,7 @@ header{
 }
 
 .logout_btn:hover{
-    background: #008080;
+    background: #1f7a1f;
 }
 
 .sidebar {
