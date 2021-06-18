@@ -43,11 +43,10 @@ header{
     font-weight: 600;
     color: #fff;
     transition: 0.5s;
-    transition-property: background;
 }
 
 .logout_btn:hover{
-    background: #00b3b3;
+    background: #008080;
 }
 
 .sidebar {
