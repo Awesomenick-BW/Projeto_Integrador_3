@@ -3,6 +3,7 @@ body {
     padding: 0;
 }
 
+/*css for the first image & button start*/
 .image-container .text-over-img h1 {
     text-align: center;
     color: #fff;
@@ -39,6 +40,7 @@ body {
     font-family: "Lucida Console", Courier, monospace;
   }
 
+/*css for the animated button*/
 .btn-position {
     position: absolute;
     top: 85%;
@@ -88,6 +90,7 @@ body {
     transform: scaleX(1);
 }
 
+/*turning the button responsive when in mobile mode*/
 @media (max-width: 640px){
     .btn {
         width: 120px;

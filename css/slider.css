@@ -1,3 +1,5 @@
+/*class that defines the size and other basic and structural elements
+of the slideshow container*/
 .format{
   background-image: url(../img/newspaper.jpg);
   width: 100%;
@@ -79,6 +81,7 @@
   transform: translateX(-50%);
 }
 
+/*css for the slider buttons*/
 .img-slider .navigation .butn{
   border: 2px solid #40D3DC;
   padding: 1.5px;
@@ -98,6 +101,7 @@
   background: #40D3DC;
 }
 
+/*properties for responsival aspect*/
 @media (max-width: 820px){
   .img-slider{
     width: 85%;
