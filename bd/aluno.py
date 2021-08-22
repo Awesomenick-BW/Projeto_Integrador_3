@@ -12,7 +12,7 @@ class Aluno(Usuario):
     # Adicinando atibuto as variáveis
     # Definindo a variável 'id' como chave primária
     id = db.Column(db.Integer, db.ForeignKey('usuario.id'), primary_key="True")
-
+    
     # Definindo que Aluno é filho de uma classe pai
     __mapper_args__ = {
         'polymorphic_identity':'aluno'
