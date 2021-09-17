@@ -32,21 +32,17 @@ class Professor(Usuario):
     
     # Método responsável por printar o texto em formato json
     def json(self):
-        # Utilizando o super() para herdar o método
-        return super().json() | {
+        json1 = super().json()
+        json2 = json1.update({
             "area_de_atuacao": self.area_de_atuacao,
             "formacao": self.formacao,
             "experiencia": self.experiencia
-        }
+        })
+
+        return json1
 
 # Verificando se o diretório atual é o principal
 if __name__ == "__main__":
-
-    # Verificando se já existe um arquivo
-    if os.path.exists(arquivobd):
-        # Se a condição é verdadeira, remova o arquivo
-        os.remove(arquivobd)
-
     # Criando tabelas
     db.create_all()
 

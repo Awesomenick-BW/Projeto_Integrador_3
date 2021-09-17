@@ -32,22 +32,21 @@ class Aluno(Usuario):
     
     # Método responsável por printar o texto em formato JavaScript
     def json(self):
-        # Utilizando o super() para herdar o método
-        return super().json() | {
+        json1 = super().json()
+        json2 = json1.update({
             "escolaridade": self.escolaridade,
-            "materias_fracas": self.materias_fracas,
+            "materias_fracas": self.materias_fracas, 
             "objetivo": self.objetivo
-        }
+        })
+
+        return json1
 
 
 # Verificando de o diretório atual é o principal
 if __name__ == "__main__":
-
-    # Verificando de já existe um arquivo
     if os.path.exists(arquivobd):
-        # Removendo o arquivo
+        # Se a condição é verdadeira, remova o arquivo
         os.remove(arquivobd)
-
     # Criando tabelas
     db.create_all()
 

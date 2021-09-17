@@ -1,0 +1,18 @@
+.author-1 {
+    height: 300px;
+    width: 200px;
+    justify-content: center;
+    margin: 0 auto;
+}
+
+.author_profile_image{
+    width: 90px;
+    height: 90px;
+    margin-bottom: 10px;
+}
+
+.saiba-mais h1{
+    padding-top: 20px;
+    color: #0000cc;
+}
+
