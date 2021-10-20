@@ -49,6 +49,22 @@ body {
     text-align: center;
 }
 
+.btn-link {
+    color: #fff;
+    font-family: "Lucida Console", Courier, monospace;
+    display: inline-block;     
+    position: relative;    
+    z-index: 1;     
+    padding: 18px 60px 18px 60px;     
+    margin: -50px;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.btn-link:hover{
+    color: #000
+}
+
 .btn {
     background: none;
     border: 2px solid #fff;
@@ -89,6 +105,8 @@ body {
 .btn1:hover::before {
     transform: scaleX(1);
 }
+
+
 
 /*turning the button responsive when in mobile mode*/
 @media (max-width: 640px){
