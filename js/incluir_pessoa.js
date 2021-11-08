@@ -6,7 +6,7 @@ $(function(){
         cpf = $("campoCpf").val();
         idade = $("campoIdade").val();
 
-        var dados = JSON.stringify({nome: nome, email: email, cpf: cpf, idade: idade});
+        var dados = JSON.stringify({nome: nome, cpf: cpf, email: email, idade: idade});
 
         $.ajax({
             url: 'https://localhost:5000/incluir_pessoa',

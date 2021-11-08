@@ -23,6 +23,7 @@ def incluir_pessoa():
     dados = request.get_json()
 
     try:
+        db.create_all()
         nova = Usuario(**dados)
         db.session.add(nova)
         db.session.commit()
