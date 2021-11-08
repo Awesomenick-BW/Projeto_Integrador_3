@@ -1,62 +1,3 @@
-Daniel Krüger <danielk872@gmail.com>
-	
-sex., 5 de nov. 09:30 (há 3 dias)
-	
-para mim
-$(function(){
-
-    $ (document).on("click", "#btIncluirPessoa", function() {
-        nome = $("#campoNome").val();
-        senha = $("#campoSenha").val();
-        con_senha = $("#campoCon_Senha").val();
-        email = $("#campoEmail").val();
-        cpf = $("campoCpf").val();
-        idade = $("campoIdade").val();
-
-        if (senha != con_senha) {
-            alert("ERRO: Erro ao confirmar a senha");
-        } else {
-
-            var dados = JSON.stringify({nome: nome, senha: senha, email: email, cpf: cpf, idade: idade});
-
-            $.ajax({
-                url: 'https://localhost:5000/incluir_pessoa',
-                type: 'POST',
-                dataType: 'json',
-                contentType: 'application/json',
-                data: dados,
-                success: pessoaInluida,
-                error: erroAoIncluir
-            });
-
-            function pessoaInluida (retorno) {
-                if (retorno.resultado == "ok") {
-                    alert("Pessoa incluída com sucesso!");      
-                    $("campoNome").val("");
-                    $("campoSenha").val("");
-                    $("campoEmail").val("");
-                    $("campoCpf").val("");
-                    $("campoIdade").val("");
-                } else {
-                    alert(retorno.resultado + ":" + retorno.detalhes)
-                }
-            }
-
-            function erroAoIncluir (retorno) {
-                alert("ERRO: "+retorno.resultado + ":" + retorno.detalhes);
-            }
-
-        }
-
-    });
-});
-
-
-
-
-
-
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -112,7 +53,7 @@ $(function(){
             <input type="checkbox" id="chk" aria-hidden="true">
                 <!-- Sing-up form -->
                 <div class="signup">
-                    <form>
+                    <form onsubmit="return false;">
                         <label for="chk" aria-hidden="true">Sign up</label>
                         <input type="text" name="txt" placeholder="Nome" required="" id="campoNome">
                         <input type="email" name="email" placeholder="Email" required="" id="campoEmail">
@@ -123,12 +64,12 @@ $(function(){
 
                         <div class="radio-opt">
                             <label class="box-radio-btn">
-                              <input type="radio" name="user" id="button1" class="input-btn" checked>
+                              <input type="radio" name="user" id="button1" class="input-btn">
                               <span class="span-btn">Aluno</span>
                             </label>
                             
                             <label class="box-radio-btn">
-                              <input type="radio" name="user" id="button2" class="input-btn" checked>
+                              <input type="radio" name="user" id="button2" class="input-btn">
                               <span class="span-btn">Professor</span>
                             </label>
                         </div>
@@ -212,6 +153,7 @@ $(function(){
         </div>
     </footer>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../js/incluir_pessoa.js"></script>
 
 </body>

@@ -1,12 +1,14 @@
 body {
 	margin: 0;
+	background: rgb(0,39,66);
+background: linear-gradient(360deg, rgba(0,39,66,1) 0%, rgba(63,63,111,1) 40%, rgba(255,255,255,1) 100%);
 }
 
 /* Set a background who will fill the screen, besides center horizontally and vertically */
 .body-main{
 	min-height: 100vh;
 	font-family: 'Jost', sans-serif;
-	background: url("../img/background-register.png") no-repeat;
+	/*background: url("../img/background-register.png") no-repeat;*/
 	background-size: 100% 100%;
 	display: flex;
 	justify-content: center;
@@ -15,8 +17,9 @@ body {
 
 /* Set a background, height and width to the form */
 .main-form{
+	margin: 100px;
 	width: 450px;
-	height: 750px;
+	height: 800px;
 	overflow: hidden;
 	background-color: #002742;
 	border-radius: 10px;
@@ -86,7 +89,7 @@ form button:hover{
 
 /* Set a height, background, border and a transition */
 .login{
-	height: 650px;
+	height: 720px;
 	background: #cccccc;
 	border-radius: 60% / 10%;
 	transform: translateY(-180px);
@@ -101,7 +104,7 @@ form button:hover{
 
 /* Make some effects */
 #chk:checked ~ .login{
-	transform: translateY(-720px);
+	transform: translateY(-780px);
 }
 #chk:checked ~ .login label{
 	transform: scale(1);	
