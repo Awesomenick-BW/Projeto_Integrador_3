@@ -55,9 +55,25 @@
 				<div class="signup">
 					<form>
 						<label for="chk" aria-hidden="true">Sign up</label>
-						<input type="text" name="txt" placeholder="User name" required="">
+						<input type="text" name="txt" placeholder="Nome" required="">
 						<input type="email" name="email" placeholder="Email" required="">
-						<input type="password" name="pswd" placeholder="Password" required="">
+						<input type="password" name="pswd" placeholder="Senha" required="">
+                        <input type="password" name="cnf-pswd" placeholder="Confirme a senha" required="">
+                        <input type="text" name="cpf" placeholder="CPF" required="">
+                        <input type="text" name="age" placeholder="Idade" required="">
+
+                        <div class="radio-opt">
+                            <label class="box-radio-btn">
+                              <input type="radio" name="user" id="button1" class="input-btn" checked>
+                              <span class="span-btn">Aluno</span>
+                            </label>
+                            
+                            <label class="box-radio-btn">
+                              <input type="radio" name="user" id="button2" class="input-btn" checked>
+                              <span class="span-btn">Professor</span>
+                            </label>
+                        </div>
+
 						<button>Sign up</button>
 					</form>
 				</div>
@@ -136,6 +152,8 @@
             </ul>
         </div>
     </footer>
+
+    <script src="incluir_pessoa.js"></script>
 
 </body>
 </html>
