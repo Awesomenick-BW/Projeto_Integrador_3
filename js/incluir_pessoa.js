@@ -15,7 +15,7 @@ $(function(){
             var dados = JSON.stringify({nome: nome, cpf: cpf, email: email, idade: idade});
 
             $.ajax({
-                url: 'https://localhost:5000/incluir_pessoa',
+                url: 'http://localhost:5000/incluir_pessoa',
                 type: 'POST',
                 dataType: 'json',
                 contentType: 'application/json',
