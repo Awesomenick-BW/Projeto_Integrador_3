@@ -38,6 +38,8 @@ def incluir_pessoa(heranca):
     except Exception as e:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
 
+    resposta.headers.add("Access-Control-Allow-Origin", "*") 
+
     return resposta
 
 app.run(debug = True)
