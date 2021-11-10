@@ -23,14 +23,21 @@ header{
 
 .left_area h3{
     color: #fff;
-    margin: 0;
+    margin: 4px auto;
     text-transform: uppercase;
-    font-size: 22px;
+    font-size: 25px;
     font-weight: 900;
 }
 
+.logo-img{
+    width: 55px;
+    height: 50px;
+    overflow: hidden;
+    margin-top: -10px;
+}
+
 .left_area span{
-    color: #b32d00;
+    color: #456255;
 }
 
 .logout_btn{
