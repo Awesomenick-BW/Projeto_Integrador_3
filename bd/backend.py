@@ -23,17 +23,16 @@ def incluir_pessoa(heranca):
     dados = request.get_json()
 
     try:
-        if heranca == 1:
-            db.create_all()
-            nova = Professor(**dados)
-            db.session.add(nova)
-            db.session.commit()
+        db.create_all()
 
         if heranca == 1:
-            db.create_all()
+            nova = Professor(**dados)
+
+        if heranca == 2:
             nova = Aluno(**dados)
-            db.session.add(nova)
-            db.session.commit()
+        
+        db.session.add(nova)
+        db.session.commit()
 
     except Exception as e:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})

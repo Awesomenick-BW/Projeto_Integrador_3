@@ -35,11 +35,13 @@ class Aluno(Usuario):
     # Método responsável por printar o texto em formato JavaScript
     def json(self):
         json1 = super().json()
+        """
         json2 = json1.update({
             "escolaridade": self.escolaridade,
             "materias_fracas": self.materias_fracas, 
             "objetivo": self.objetivo
         })
+        """
 
         return json1
 

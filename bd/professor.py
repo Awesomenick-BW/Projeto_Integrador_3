@@ -35,11 +35,13 @@ class Professor(Usuario):
     # Método responsável por printar o texto em formato json
     def json(self):
         json1 = super().json()
+        """
         json2 = json1.update({
             "area_de_atuacao": self.area_de_atuacao,
             "formacao": self.formacao,
             "experiencia": self.experiencia
         })
+        """
 
         return json1
 
