@@ -18,10 +18,12 @@ class Aluno(Usuario):
         'polymorphic_identity':'aluno'
     }
 
+    """
     # Adicionando mais variáveis
     escolaridade = db.Column(db.String(50))
     materias_fracas = db.Column(db.String(50))
     objetivo = db.Column(db.String(100))
+    """
     
     """Método que define um caminho que é mais fácil de ler e mostrar 
     os outputs de todos os membros da classe"""

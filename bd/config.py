@@ -1,9 +1,12 @@
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask, jsonify, request
 import os
+from flask_cors import CORS
 
 # utilizando o flask
 app = Flask(__name__)
+
+CORS(app)
 
 # pegando o path do diretório
 caminho = os.path.dirname(os.path.abspath(__file__))

@@ -17,21 +17,27 @@ def listar_usuarios():
     resposta.headers.add("Access-Control-Allow-Origin", "*") 
     return resposta
 
-@app.route("/incluir_pessoa", methods=['post'])
-def incluir_pessoa():
+@app.route("/incluir_pessoa/<int:heranca>", methods=['post'])
+def incluir_pessoa(heranca):
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
     dados = request.get_json()
 
     try:
-        db.create_all()
-        nova = Usuario(**dados)
-        db.session.add(nova)
-        db.session.commit()
-    
+        if heranca == 1:
+            db.create_all()
+            nova = Professor(**dados)
+            db.session.add(nova)
+            db.session.commit()
+
+        if heranca == 1:
+            db.create_all()
+            nova = Aluno(**dados)
+            db.session.add(nova)
+            db.session.commit()
+
     except Exception as e:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
 
-    resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
 app.run(debug = True)
