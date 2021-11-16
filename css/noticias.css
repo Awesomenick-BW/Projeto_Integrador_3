@@ -8,16 +8,14 @@
     --gradient-color: linear-gradient(to right bottom, rgba(255, 119, 48, .8), rgba(255, 185, 0, .8))
 }
 
-html {
-    font-size: 10px;
-}
-
-a {
+.rm-a {
     text-decoration: none;
     color: inherit;
+    font-size: 1.3rem;
+    font-weight: bold;
 }
 
-body {
+.article-body {
     font-family:'Gill Sans', sans-serif;
     font-size: 1.6rem;
     color: #333;
@@ -26,11 +24,12 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 1.5rem;
+    padding: 5rem;
     flex-direction: column;
 }
 
 .card {
+    width: 50%;
     display: flex;
     background-color: #fff;
     box-shadow: 2px .8rem 1rem rgba(0, 0, 0, .05);
@@ -80,6 +79,9 @@ body {
 
 .author {
     display: inline-block;
+    text-decoration: none;
+    font-size: 1.1rem;
+    color: inherit;
     margin-bottom: .5rem;
     transition: all .5s;
 }
@@ -90,6 +92,7 @@ body {
 
 .date {
     display: block;
+    font-size: 1.1rem;
 }
 
 .post-data {
@@ -99,7 +102,7 @@ body {
 }
 
 .title {
-    font-size: 3rem;
+    font-size: 2rem;
     line-height: 1;
 }
 
@@ -113,6 +116,7 @@ body {
 
 .description {
     position: relative;
+    font-size: 1rem;
 }
 
 .description::first-letter {
@@ -210,7 +214,7 @@ body {
         position: absolute;
         top: 0;
         left: -1.5rem;
-        z-index: 10;
+        z-index: 2;
         transform: skewX(-5deg);
     }
 }
