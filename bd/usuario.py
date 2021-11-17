@@ -15,6 +15,7 @@ class Usuario(db.Model):
     cpf = db.Column(db.String(15))
     email = db.Column(db.String(25))
     idade = db.Column(db.Integer)
+    senha = db.Column(db.String(50))
 
     # Definindo um coluna que irá mostrar se for filho ou pai
     type = db.Column(db.String(50))
@@ -29,7 +30,7 @@ class Usuario(db.Model):
     os outputs de todos os membros da classe"""
     def __str__(self):
         return str(self.id) + "," + self.nome + ", " + self.cpf + ", " + \
-            self.email + ", " + str(self.idade)
+            self.email + ", " + str(self.idade) + ", " + self.senha
     
     # Método responsável por printar o texto em formato JavaScript
     def json(self):
@@ -37,7 +38,8 @@ class Usuario(db.Model):
             "id" : self.id,
             "nome" : self.nome,
             "cpf" : self.cpf,
-            "idade" : self.idade
+            "idade" : self.idade,
+            "senha" : self.senha
         }
 
 

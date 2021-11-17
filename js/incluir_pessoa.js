@@ -25,7 +25,7 @@ $(function(){
                 alert("ERRO: Erro ao confirmar a senha");
             } else {
 
-                var dados = JSON.stringify({nome: nome, cpf: cpf, email: email, idade: idade});
+                var dados = JSON.stringify({nome: nome, cpf: cpf, email: email, idade: idade, senha: senha});
 
                 $.ajax({
                     url: 'http://localhost:5000/incluir_pessoa/'+heranca,

@@ -11,41 +11,43 @@
 </head>
 <body>
 
+    <!--creates a block to support basic general proprerties-->
     <div class="block-format"> 
         <input type="checkbox" id="check">
         <!--header area start-->
         <header>
-        <!-- Sidebar's button -->
         <label for="check">
             <i class="fas fa-bars" id="sidebar_btn"></i>
         </label>
-        <div class="left_area">
-            <h3>Teste <span>Teste</span></h3>
+        <div class="left_area" style="display:inline-flex;">
+            <a href="../src/index.html">
+                <div>
+                    <img class="logo-img" src="../img/Redacione - Logo.png">
+                </div>
+            </a>
+            <h3>Reda<span>cione</span></h3>
         </div>
-        <!-- Logout button -->
-        <div class="right_area">
+        <div>
             <a href="#" class="logout_btn">Logout</a>
         </div>
         </header>
         <!--header area end-->
-
         <!--sidebar start-->
-        <!-- Guest's image -->
         <div class="sidebar">
-            <div class="centered-profile">
-                <img src="../img/guest_user.jpg" class="profile_image" alt="">
-                <h4>Guest</h4>
-            </div>
-        <!-- Links from other websites -->
+        <div class="centered-profile">
+            <img src="../img/guest_user.jpg" class="profile_image" alt="">
+            <h4>Guest</h4>
+        </div>
         <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
-        <a href="#"><i class="fas fa-newspaper"></i><span>Notícias</span></a>
+        <a href="noticias.html"><i class="fas fa-newspaper"></i><span>Notícias</span></a>
         <a href="#"><i class="fas fa-user-graduate"></i><span>Portal do Aluno</span></a>
         <a href="#"><i class="fas fa-user-tie"></i><span>Portal do Professor</span></a>
         <a href="cadastro.html"><i class="fas fa-sign-in-alt"></i><span>Cadastro</span></a>
-        <a href="#"><i class="fas fa-info-circle"></i><span>Sobre</span></a>
+        <a href="saiba-mais.html"><i class="fas fa-info-circle"></i><span>Sobre</span></a>
         </div>
         <!--sidebar end-->
     </div>
+    <!--formater block end-->
 
     <!-- Box containing a form -->
     <div class="body-main">
@@ -92,31 +94,33 @@
     <!-- The end of log-in and sign-up forms -->
 
     <!-- Here the footer starts -->
+    <!--footer start-->
     <footer class="footer">
         <hr id="hr-footer">
 
-        <!-- Social media icons -->
+        <!--social media icons start-->
         <div class="icons">
             <ul class="icons-ul">
                 <li class="icons-li">
-                    <a href="#">
-                        <img src="https://findicons.com/files/icons/2830/clean_social_icons/250/facebook.png" width="40.69px">
+                    <a href="https://www.facebook.com/redacionepi" target="_blank">
+                        <img src="https://findicons.com/files/icons/2830/clean_social_icons/250/facebook.png" width="45px">
                     </a>
                 </li>
                 <li class="icons-li">
-                    <a href="#">
+                    <a href="https://twitter.com/Redacione_pi" target="_blank">
                         <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" width="45px">
                     </a>
                 </li>
                 <li class="icons-li">
-                    <a href="#">
+                    <a href="https://www.instagram.com/redacione_pi/" target="_blank">
                         <img src="https://i.pinimg.com/originals/8b/ed/09/8bed099ffbf95985d5184831b0c05dcc.png" width="45px">
                     </a>
                 </li>
             </ul>
         </div>
+        <!--social media icons end-->
 
-        <!-- Links from the others websites -->
+        <!--linking the website pages-->
         <div class="page-links">
             <ul class="page-links-ul">
                 <li class="page-links-li">
@@ -126,7 +130,7 @@
                 </li>
                 <li class="page-links-li">
                     <strong>
-                        <a href="#">Notícias</a>
+                        <a href="../src/noticias.html">Notícias</a>
                     </strong>
                 </li>
                 <li class="page-links-li">
@@ -146,7 +150,7 @@
                 </li>
                 <li class="page-links-li">
                     <strong>
-                        <a href="#">Sobre</a>
+                        <a href="../src/saiba-mais.html">Sobre</a>
                     </strong>
                 </li>
             </ul>

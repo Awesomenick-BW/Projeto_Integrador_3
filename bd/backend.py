@@ -3,10 +3,12 @@ from usuario import Usuario
 from aluno import Aluno
 from professor import Professor
 
+# Método para checar se o backend está operante
 @app.route("/")
 def padrao():
     return "backend operante"
 
+# Método para listar pessoa
 @app.route("/listar_usuarios")
 def listar_usuarios():
     usuarios = db.session.query(Usuario).all()
@@ -17,30 +19,30 @@ def listar_usuarios():
     resposta.headers.add("Access-Control-Allow-Origin", "*") 
     return resposta
 
+# Método para incluir pessoa
 @app.route("/incluir_pessoa/<int:heranca>", methods=['post'])
 def incluir_pessoa(heranca):
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
     dados = request.get_json()
 
     try:
-        db.create_all()
-
         if heranca == 1:
             nova = Professor(**dados)
-
-        if heranca == 2:
+        elif heranca == 2:
             nova = Aluno(**dados)
         
+        db.create_all()
         db.session.add(nova)
         db.session.commit()
 
     except Exception as e:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
 
-    resposta.headers.add("Access-Control-Allow-Origin", "*") 
-
+    resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
+# teste: curl -X DELETE http://localhost:5000/excluir_pessoa/
+# Método para excluir pessoa
 @app.route("/excluir_pessoa/<int:pessoa_id>", methods=['DELETE'])
 def excluir_pessoa(pessoa_id):
     resposta = jsonify({"resulatado": "ok", "detalhes": "ok"})

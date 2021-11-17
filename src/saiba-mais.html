@@ -10,69 +10,110 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 </head>
 <body>
-    <section>
-        <div class="container">
-            <h1 class="heading">Sobre nós</h1>
-            <div class="card-wrapper">
-                <div class="card">
-                    <img src="../img/saiba_mais_background.jpg" alt="card background" class="card-img">
-                    <img src="../img/pedro_profile.jpeg" alt="profile image" class="profile-img">
-                    <h1>Pedro Romig</h1>
-                    <p class="job-tittle">Desenvolvedor Web</p>
-                    <p class="about">
-                        Nasceu no dia 31 de julho de 2003 na cidade de Blumenau, no estado de Santa Catarina. Começou a cursar 
-                        Informática no Instituto Federal Catarinense no ano de 2019.<br><br><br>
-                    </p>
-                    <a href="#" class="btn">Contato</a>
-                    <ul class="social-media">
-                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
-                    </ul>
+    <!--creates a block to support basic general proprerties-->
+    <div class="block-format"> 
+        <input type="checkbox" id="check">
+        <!--header area start-->
+        <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area" style="display:inline-flex;">
+            <a href="../src/index.html">
+                <div>
+                    <img class="logo-img" src="../img/Redacione - Logo.png">
                 </div>
+            </a>
+            <h3>Reda<span>cione</span></h3>
+        </div>
+        <div>
+            <a href="#" class="logout_btn">Logout</a>
+        </div>
+        </header>
+        <!--header area end-->
+        <!--sidebar start-->
+        <div class="sidebar">
+        <div class="centered-profile">
+            <img src="../img/guest_user.jpg" class="profile_image" alt="">
+            <h4>Guest</h4>
+        </div>
+        <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="noticias.html"><i class="fas fa-newspaper"></i><span>Notícias</span></a>
+        <a href="#"><i class="fas fa-user-graduate"></i><span>Portal do Aluno</span></a>
+        <a href="#"><i class="fas fa-user-tie"></i><span>Portal do Professor</span></a>
+        <a href="cadastro.html"><i class="fas fa-sign-in-alt"></i><span>Cadastro</span></a>
+        <a href="saiba-mais.html"><i class="fas fa-info-circle"></i><span>Sobre</span></a>
+        </div>
+        <!--sidebar end-->
+    </div>
+    <!--formater block end-->
 
-                <div class="card">
-                    <img src="../img/saiba_mais_background.jpg" alt="card background" class="card-img">
-                    <img src="../img/braian_profile.jpg" alt="profile image" class="profile-img">
-                    <h1>Braian Wandalen</h1>
-                    <p class="job-tittle">Desenvolvedor Web</p>
-                    <p class="about">
-                        Nascido no dia 21 de abril de 2004, atualmente mora em Pomerode, Santa Catarina.
-                        Cursa Informática desde 2019 no Instituto Federal Catarinense (Campus Blumenau) e
-                        é formando em 2021.
-                    </p>
-                    <a href="#" class="btn">Contato</a>
-                    <ul class="social-media">
-                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
-                    </ul>
-                </div>
+    <div class="formater">
+        <section>
+            <div class="container">
+                <h1 class="heading">Sobre nós</h1>
+                <div class="card-wrapper">
+                    <div class="card">
+                        <img src="../img/saiba_mais_background.jpg" alt="card background" class="card-img">
+                        <img src="../img/pedro_profile.jpeg" alt="profile image" class="profile-img">
+                        <h1>Pedro Romig</h1>
+                        <p class="job-tittle">Desenvolvedor Web</p>
+                        <p class="about">
+                            Nasceu no dia 31 de julho de 2003 na cidade de Blumenau, no estado de Santa Catarina. Começou a cursar 
+                            Informática no Instituto Federal Catarinense no ano de 2019.<br><br><br>
+                        </p>
+                        <a href="#" class="btn">Contato</a>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+                        </ul>
+                    </div>
 
-                <div class="card">
-                    <img src="../img/saiba_mais_background.jpg" alt="card background" class="card-img">
-                    <img src="../img/daniel_profile.jpg" alt="profile image" class="profile-img">
-                    <h1>Daniel Krüger</h1>
-                    <p class="job-tittle">Desenvolvedor Web</p>
-                    <p class="about">
-                        Nascido no dia seis de setembro de 2003, em Blumenau. Ingressou no Instituto Federal 
-                        Catarinense Campus Blumenau em 2019, atualmente está cursando o terceiro ano do ensino médio, 
-                        concomitantemente ao técnico em informática.
-                    </p>
-                    <a href="#" class="btn">Contato</a>
-                    <ul class="social-media">
-                        <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
-                        <li><a href="#"><i class="fab fa-instagram"></i></a></li>
-                        <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
-                    </ul>
+                    <div class="card">
+                        <img src="../img/saiba_mais_background.jpg" alt="card background" class="card-img">
+                        <img src="../img/braian_profile.jpg" alt="profile image" class="profile-img">
+                        <h1>Braian Wandalen</h1>
+                        <p class="job-tittle">Desenvolvedor Web</p>
+                        <p class="about">
+                            Nascido no dia 21 de abril de 2004, atualmente mora em Pomerode, Santa Catarina.
+                            Cursa Informática desde 2019 no Instituto Federal Catarinense (Campus Blumenau) e
+                            é formando em 2021.
+                        </p>
+                        <a href="#" class="btn">Contato</a>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <img src="../img/saiba_mais_background.jpg" alt="card background" class="card-img">
+                        <img src="../img/daniel_profile.jpg" alt="profile image" class="profile-img">
+                        <h1>Daniel Krüger</h1>
+                        <p class="job-tittle">Desenvolvedor Web</p>
+                        <p class="about">
+                            Nascido no dia seis de setembro de 2003, em Blumenau. Ingressou no Instituto Federal 
+                            Catarinense Campus Blumenau em 2019, atualmente está cursando o terceiro ano do ensino médio, 
+                            concomitantemente ao técnico em informática.
+                        </p>
+                        <a href="#" class="btn">Contato</a>
+                        <ul class="social-media">
+                            <li><a href="#"><i class="fab fa-facebook-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-twitter-square"></i></a></li>
+                            <li><a href="#"><i class="fab fa-instagram"></i></a></li>
+                            <li><a href="#"><i class="fab fa-google-plus-square"></i></a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+    </div>
 
+    <!--footer start-->
     <footer class="footer">
         <hr id="hr-footer">
 
@@ -80,17 +121,17 @@
         <div class="icons">
             <ul class="icons-ul">
                 <li class="icons-li">
-                    <a href="#">
-                        <img src="https://findicons.com/files/icons/2830/clean_social_icons/250/facebook.png" width="40.69px">
+                    <a href="https://www.facebook.com/redacionepi" target="_blank">
+                        <img src="https://findicons.com/files/icons/2830/clean_social_icons/250/facebook.png" width="45px">
                     </a>
                 </li>
                 <li class="icons-li">
-                    <a href="#">
+                    <a href="https://twitter.com/Redacione_pi" target="_blank">
                         <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" width="45px">
                     </a>
                 </li>
                 <li class="icons-li">
-                    <a href="#">
+                    <a href="https://www.instagram.com/redacione_pi/" target="_blank">
                         <img src="https://i.pinimg.com/originals/8b/ed/09/8bed099ffbf95985d5184831b0c05dcc.png" width="45px">
                     </a>
                 </li>
@@ -108,7 +149,7 @@
                 </li>
                 <li class="page-links-li">
                     <strong>
-                        <a href="#">Notícias</a>
+                        <a href="../src/noticias.html">Notícias</a>
                     </strong>
                 </li>
                 <li class="page-links-li">
@@ -128,13 +169,12 @@
                 </li>
                 <li class="page-links-li">
                     <strong>
-                        <a href="#">Sobre</a>
+                        <a href="../src/saiba-mais.html">Sobre</a>
                     </strong>
                 </li>
             </ul>
         </div>
     </footer>
-
 
 </body>
 </html>
