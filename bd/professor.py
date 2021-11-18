@@ -24,6 +24,7 @@ class Professor(Usuario):
     formacao = db.Column(db.String(150))
     experiencia = db.Column(db.String(100))
     """
+    role = "professor"
     
     """Método que define um caminho que é mais fácil de ler e mostrar 
     os outputs de todos os membros da classe"""

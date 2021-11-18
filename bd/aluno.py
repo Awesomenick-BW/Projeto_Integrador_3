@@ -24,6 +24,7 @@ class Aluno(Usuario):
     materias_fracas = db.Column(db.String(50))
     objetivo = db.Column(db.String(100))
     """
+    role = "aluno"
     
     """Método que define um caminho que é mais fácil de ler e mostrar 
     os outputs de todos os membros da classe"""

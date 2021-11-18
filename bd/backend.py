@@ -46,7 +46,7 @@ def incluir_pessoa(heranca):
 @app.route("/excluir_pessoa/<int:pessoa_id>", methods=['DELETE'])
 def excluir_pessoa(pessoa_id):
     resposta = jsonify({"resulatado": "ok", "detalhes": "ok"})
-    
+
     try:
         Usuario.query.filter(Usuario.id == pessoa_id).delete()
         db.session.commit()
@@ -55,5 +55,19 @@ def excluir_pessoa(pessoa_id):
 
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
+
+@app.route("/encontrar_pessoa/", methods=['POST'])
+def encontrar_pessoa():
+    resposta = jsonify({"resultado": "erro", "detalhes": "erro ao validar"})
+    dados = request.get_json()
+    usuario = db.session.query(Usuario).filter(Usuario.email==dados["email"])
+    if usuario.role == None:
+        return "nada"
+    elif usuario.role == "aluno":
+        return "aluno"
+    elif usuario.role == "professor":
+        return "professor"
+    else:
+        return "nada"
 
 app.run(debug = True)
