@@ -24,18 +24,18 @@ class Professor(Usuario):
     formacao = db.Column(db.String(150))
     experiencia = db.Column(db.String(100))
     """
-    role = "professor"
+    role = db.Column(db.String(10))
     
     """Método que define um caminho que é mais fácil de ler e mostrar 
     os outputs de todos os membros da classe"""
     def __str__(self):
         # Utilizando o super() para herdar o método
-        return super().__str__() + ", " + self.area_de_atuacao + \
-            ", " + self.formacao + ", " + self.experiencia
+        return super().__str__() + ", " + self.role
     
     # Método responsável por printar o texto em formato json
     def json(self):
         json1 = super().json()
+        json2 = json1.update({"role": self.role})
         """
         json2 = json1.update({
             "area_de_atuacao": self.area_de_atuacao,

@@ -13,10 +13,12 @@ $(function(){
         profi = $("input[name='user']:checked").val();
 
         if (profi == "aluno") {
-            heranca = 2
+            heranca = 2;
+            role = "aluno";
         }
         if (profi == "prof"){
-            heranca = 1
+            heranca = 1;
+            role = "professor";
         }
 
         if (heranca != 0) {
@@ -25,7 +27,7 @@ $(function(){
                 alert("ERRO: Erro ao confirmar a senha");
             } else {
 
-                var dados = JSON.stringify({nome: nome, cpf: cpf, email: email, idade: idade, senha: senha});
+                var dados = JSON.stringify({nome: nome, cpf: cpf, email: email, idade: idade, senha: senha, role: role});
 
                 $.ajax({
                     url: 'http://localhost:5000/incluir_pessoa/'+heranca,

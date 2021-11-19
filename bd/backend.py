@@ -56,18 +56,30 @@ def excluir_pessoa(pessoa_id):
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-@app.route("/encontrar_pessoa/", methods=['POST'])
+@app.route("/encontrar_pessoa", methods=['POST'])
 def encontrar_pessoa():
-    resposta = jsonify({"resultado": "erro", "detalhes": "erro ao validar"})
     dados = request.get_json()
-    usuario = db.session.query(Usuario).filter(Usuario.email==dados["email"])
-    if usuario.role == None:
-        return "nada"
-    elif usuario.role == "aluno":
-        return "aluno"
-    elif usuario.role == "professor":
-        return "professor"
+    aluno = db.session.query(Aluno).filter(Aluno.email==dados["email"] and Aluno.senha==dados["senha"]).first()
+    professor = db.session.query(Professor).filter(Professor.email==dados["email"] and Professor.senha==dados["senha"]).first()
+
+    if aluno != None:
+        value = "aluno"
+    elif professor != None:
+        value = "professor"
     else:
-        return "nada"
+        value = "nada"
+    """
+    if usuario.role == None:
+        value = "nada"
+    elif usuario.role == "aluno":
+        value = "aluno"
+    elif usuario.role == "professor":
+        value = "professor"
+    else:
+        value = "nada"
+    """
+    resposta = jsonify({"resultado": value})
+    resposta.headers.add("Access-Control-Allow-Origin", "*")
+    return resposta
 
 app.run(debug = True)

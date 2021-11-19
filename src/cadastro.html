@@ -57,12 +57,12 @@
                 <div class="signup">
                     <form onsubmit="return false;">
                         <label for="chk" aria-hidden="true">Sign up</label>
-                        <input type="text" name="txt" placeholder="Nome" required="" id="campoNome" value="joao">
-                        <input type="email" name="email" placeholder="Email" required="" id="campoEmail" value="jo@gmail.com">
-                        <input type="password" name="pswd" placeholder="Senha" required="" id="campoSenha" value="123">
-                        <input type="password" name="cnf-pswd" placeholder="Confirme a senha" required="" id="campoCon_Senha" value="123">
-                        <input type="text" name="cpf" placeholder="CPF" required="" id="campoCpf" value="123.456.789-10">
-                        <input type="text" name="age" placeholder="Idade" required="" id="campoIdade" value="18">
+                        <input type="text" name="txt" placeholder="Nome" required="" id="campoNome">
+                        <input type="email" name="email" placeholder="Email" required="" id="campoEmail">
+                        <input type="password" name="pswd" placeholder="Senha" required="" id="campoSenha">
+                        <input type="password" name="cnf-pswd" placeholder="Confirme a senha" required="" id="campoCon_Senha">
+                        <input type="text" name="cpf" placeholder="CPF" required="" id="campoCpf">
+                        <input type="text" name="age" placeholder="Idade" required="" id="campoIdade">
 
                         <div class="radio-opt">
                             <label class="box-radio-btn">
@@ -84,8 +84,8 @@
                 <div class="login">
                     <form>
                         <label for="chk" aria-hidden="true">Login</label>
-                        <input type="email" name="email" placeholder="Email" required="" id="loginEmail">
-                        <input type="password" name="pswd" placeholder="Password" required="" id="loginSenha">
+                        <input type="email" name="email" placeholder="Email" required="" id="loginEmail" value="jo@gmail.com">
+                        <input type="password" name="pswd" placeholder="Password" required="" id="loginSenha" value="123">
                         <button id="btLogin">Login</button>
                     </form>
                 </div>
@@ -159,6 +159,7 @@
 
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="../js/incluir_pessoa.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
 
 </body>
 </html>
