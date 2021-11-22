@@ -66,12 +66,14 @@ def encontrar_pessoa():
 
     if aluno != None:
         value = "aluno"
+        id_ = aluno["id"]
     elif professor != None:
         value = "professor"
+        id_ = professor["id"]
     else:
         value = "nada"
     
-    resposta = jsonify({"resultado": value})
+    resposta = jsonify({"resultado": value, "identificador": id_})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 

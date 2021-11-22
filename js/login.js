@@ -24,14 +24,21 @@ $(function(){
                 if (retorno.resultado == "aluno") {
                     if (sessionStorage.getItem("role") != "aluno") {
                         sessionStorage.setItem("role", "aluno");
-                        alert("Logado aluno");
+                    }
+                    if (sessionStorage.getItem("id") != retorno.identificador) {
+                        sessionStorage.setItem("id", retorno.identificador)
+                        alert("Aluno Logado")
                     }
                 }
                 else if (retorno.resultado == "professor"){
-                    if (sessionStorage.getItem("role") != "professor")
+                    if (sessionStorage.getItem("role") != "professor") {
                     sessionStorage.setItem("role", "professor");
-                    alert("Logado professor");
-                }
+                    }
+                    if (sessionStorage.getItem("id") != retorno.identificador) {
+                        sessionStorage.setItem("id", retorno.identificador)
+                        alert("Professor Logado")
+                    }
+                }  
                 else if (retorno.resultado == "nada"){
                     alert("Não foi encontrado tal pessoa");
                 }
