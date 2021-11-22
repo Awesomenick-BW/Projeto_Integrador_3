@@ -56,6 +56,8 @@ def excluir_pessoa(pessoa_id):
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
+# curl -d '{"email":"jo@gmail.com", "senha":"123"}' -X POST -H "Content-Type:application/json" localhost:5000/encontrar_pessoa
+# Métidi para encontrar pessoa
 @app.route("/encontrar_pessoa", methods=['POST'])
 def encontrar_pessoa():
     dados = request.get_json()
@@ -68,16 +70,7 @@ def encontrar_pessoa():
         value = "professor"
     else:
         value = "nada"
-    """
-    if usuario.role == None:
-        value = "nada"
-    elif usuario.role == "aluno":
-        value = "aluno"
-    elif usuario.role == "professor":
-        value = "professor"
-    else:
-        value = "nada"
-    """
+    
     resposta = jsonify({"resultado": value})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta

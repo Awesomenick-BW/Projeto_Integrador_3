@@ -13,24 +13,27 @@ $(function(){
             $.ajax({
                 url: 'http://localhost:5000/encontrar_pessoa',
                 type: 'POST',
-                datatype: 'json',
+                dataType: 'json',
                 contentType: 'application/json',
                 data: dados,
-                success: pessoaEncontrada,
+                success: pessoaEncontrada2,
                 error: erroAoEncontrar
             });
 
-            function pessoaEncontrada(retorno){
+            function pessoaEncontrada2(retorno){
                 if (retorno.resultado == "aluno") {
-                    alert("Logado");
-                    sessionStorage.setItem("role", "aluno");
+                    if (sessionStorage.getItem("role") != "aluno") {
+                        sessionStorage.setItem("role", "aluno");
+                        alert("Logado aluno");
+                    }
                 }
                 else if (retorno.resultado == "professor"){
-                    alert("Logado");
+                    if (sessionStorage.getItem("role") != "professor")
                     sessionStorage.setItem("role", "professor");
+                    alert("Logado professor");
                 }
                 else if (retorno.resultado == "nada"){
-                    alert("Não foi enconctrado tal pessoa");
+                    alert("Não foi encontrado tal pessoa");
                 }
             }
 
