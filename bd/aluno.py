@@ -24,6 +24,7 @@ class Aluno(Usuario):
     materias_fracas = db.Column(db.String(50))
     objetivo = db.Column(db.String(100))
     """
+    # Adicionando um indentificador de aluno
     role = db.Column(db.String(10))
     
     """Método que define um caminho que é mais fácil de ler e mostrar 

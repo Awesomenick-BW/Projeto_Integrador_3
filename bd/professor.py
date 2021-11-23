@@ -24,6 +24,7 @@ class Professor(Usuario):
     formacao = db.Column(db.String(150))
     experiencia = db.Column(db.String(100))
     """
+    # Adicionando um identificador de Professor
     role = db.Column(db.String(10))
     
     """Método que define um caminho que é mais fácil de ler e mostrar 

@@ -6,6 +6,7 @@ from flask_cors import CORS
 # utilizando o flask
 app = Flask(__name__)
 
+# Aplicando o CORS
 CORS(app)
 
 # pegando o path do diretório
