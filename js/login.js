@@ -16,11 +16,11 @@ $(function(){
                 dataType: 'json',
                 contentType: 'application/json',
                 data: dados,
-                success: pessoaEncontrada2,
+                success: pessoaEncontrada,
                 error: erroAoEncontrar
             });
 
-            function pessoaEncontrada2(retorno){
+            function pessoaEncontrada(retorno){
                 if (retorno.resultado == "aluno") {
                     if (sessionStorage.getItem("role") != "aluno") {
                         sessionStorage.setItem("role", "aluno");

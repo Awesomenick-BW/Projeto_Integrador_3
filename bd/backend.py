@@ -49,6 +49,8 @@ def excluir_pessoa(pessoa_id):
 
     try:
         Usuario.query.filter(Usuario.id == pessoa_id).delete()
+        Aluno.query.filter(Aluno.id == pessoa_id).delete()
+        Professor.query.filter(Professor.id == pessoa_id).delete()
         db.session.commit()
     except:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
@@ -66,10 +68,10 @@ def encontrar_pessoa():
 
     if aluno != None:
         value = "aluno"
-        id_ = aluno["id"]
+        id_ = aluno.id
     elif professor != None:
         value = "professor"
-        id_ = professor["id"]
+        id_ = professor.id
     else:
         value = "nada"
     
