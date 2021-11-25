@@ -22,22 +22,14 @@ $(function(){
 
             function pessoaEncontrada(retorno){
                 if (retorno.resultado == "aluno") {
-                    if (sessionStorage.getItem("role") != "aluno") {
-                        sessionStorage.setItem("role", "aluno");
-                    }
-                    if (sessionStorage.getItem("id") != retorno.identificador) {
-                        sessionStorage.setItem("id", retorno.identificador)
-                        alert("Aluno Logado")
-                    }
+                    sessionStorage.setItem("role", "aluno");
+                    sessionStorage.setItem("id", retorno.identificador);
+                    alert("Aluno Logado");
                 }
                 else if (retorno.resultado == "professor"){
-                    if (sessionStorage.getItem("role") != "professor") {
                     sessionStorage.setItem("role", "professor");
-                    }
-                    if (sessionStorage.getItem("id") != retorno.identificador) {
-                        sessionStorage.setItem("id", retorno.identificador)
-                        alert("Professor Logado")
-                    }
+                    sessionStorage.setItem("id", retorno.identificador);
+                    alert("Professor Logado");
                 }  
                 else if (retorno.resultado == "nada"){
                     alert("Não foi encontrado tal pessoa");
@@ -48,5 +40,11 @@ $(function(){
                 alert("Erro!" + ":" + retorno.resultado);
             }
         }
+    });
+
+    $("#btLogout").click(function(){
+        sessionStorage.removeItem("role");
+        sessionStorage.removeItem("id");
+        window.location.reload();
     });
 });
