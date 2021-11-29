@@ -37,6 +37,7 @@ class Usuario(db.Model):
         return {
             "id" : self.id,
             "nome" : self.nome,
+            "email" : self.email,
             "cpf" : self.cpf,
             "idade" : self.idade,
             "senha" : self.senha

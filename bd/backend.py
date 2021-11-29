@@ -59,7 +59,7 @@ def excluir_pessoa(pessoa_id):
     return resposta
 
 # curl -d '{"email":"jo@gmail.com", "senha":"123"}' -X POST -H "Content-Type:application/json" localhost:5000/encontrar_pessoa
-# Métidi para encontrar pessoa
+# Método para encontrar pessoa
 @app.route("/encontrar_pessoa", methods=['POST'])
 def encontrar_pessoa():
     dados = request.get_json()
@@ -76,6 +76,30 @@ def encontrar_pessoa():
         value = "nada"
     
     resposta = jsonify({"resultado": value, "identificador": id_})
+    resposta.headers.add("Access-Control-Allow-Origin", "*")
+    return resposta
+
+# curl -d '{"id": 1, "nome": "abacate", "cpf": "123.456.789-10", "idade": 20, "email":"abac@gmail.com", "senha":"123"}' -X POST -H "Content-Type:application/json" localhost:5000/editar_aluno
+# Método de UPDATE
+@app.route("/editar_aluno", methods=["POST"])
+def editar_aluno():
+    dados = request.get_json()
+    resposta = jsonify({"resulatado": "ok", "detalhes": "ok"})
+
+    try:
+        id_aluno = dados['id']
+        novo = db.session.query(Aluno).filter(Aluno.id == id_aluno).first()
+        
+        novo.nome = dados['nome']
+        novo.email = dados['email']
+        novo.cpf = dados['cpf']
+        novo.idade = idade['idade']
+        novo.senha = dados['senha']
+
+        db.session.commit()
+
+    except Exception as e:
+        resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
