@@ -83,7 +83,7 @@ def encontrar_pessoa():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-# curl -d '{"id": 1, "nome": "abacate", "cpf": "123.456.789-10", "email":"abac@gmail.com", "senha":"123", "idade": 20}' -X POST -H "Content-Type:application/json" localhost:5000/editar_aluno
+# curl -d '{"id": 1, "nome": "abacate", "cpf": "123.456.789-10", "email":"abac@gmail.com", "senha":"123", "idade": 20}' -X POST -H "Content-Type:application/json" localhost:5000/update/
 # Método de UPDATE
 @app.route("/update/<int:role>", methods=["POST"])
 def editar_aluno(role):
