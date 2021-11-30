@@ -48,10 +48,13 @@ def excluir_pessoa(pessoa_id):
     resposta = jsonify({"resulatado": "ok", "detalhes": "ok"})
 
     try:
+        # Filtro na tabela para identificar a pessoa, para assim deletá-la
         Usuario.query.filter(Usuario.id == pessoa_id).delete()
         Aluno.query.filter(Aluno.id == pessoa_id).delete()
         Professor.query.filter(Professor.id == pessoa_id).delete()
+        
         db.session.commit()
+
     except:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
 
@@ -66,12 +69,13 @@ def encontrar_pessoa():
     aluno = db.session.query(Aluno).filter(Aluno.email==dados["email"] and Aluno.senha==dados["senha"]).first()
     professor = db.session.query(Professor).filter(Professor.email==dados["email"] and Professor.senha==dados["senha"]).first()
 
+    # Verificação para identificar se as instâncias estão vazias
     if aluno != None:
         value = "aluno"
-        id_ = aluno.id
+        id_ = aluno.id # Enviando id do aluno e a role do mesmo
     elif professor != None:
         value = "professor"
-        id_ = professor.id
+        id_ = professor.id # Enviando id do aluno e a role do mesmo
     else:
         value = "nada"
     
@@ -79,24 +83,36 @@ def encontrar_pessoa():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-# curl -d '{"id": 1, "nome": "abacate", "cpf": "123.456.789-10", "idade": 20, "email":"abac@gmail.com", "senha":"123"}' -X POST -H "Content-Type:application/json" localhost:5000/editar_aluno
+# curl -d '{"id": 1, "nome": "abacate", "cpf": "123.456.789-10", "email":"abac@gmail.com", "senha":"123", "idade": 20}' -X POST -H "Content-Type:application/json" localhost:5000/editar_aluno
 # Método de UPDATE
-@app.route("/editar_aluno", methods=["POST"])
-def editar_aluno():
+@app.route("/update/<int:role>", methods=["POST"])
+def editar_aluno(role):
     dados = request.get_json()
     resposta = jsonify({"resulatado": "ok", "detalhes": "ok"})
 
     try:
-        id_aluno = dados['id']
-        novo = db.session.query(Aluno).filter(Aluno.id == id_aluno).first()
-        
-        novo.nome = dados['nome']
-        novo.email = dados['email']
-        novo.cpf = dados['cpf']
-        novo.idade = idade['idade']
-        novo.senha = dados['senha']
+        # Verificando se o role passado é da respectiva pessoa
+        if role == 1:
+            novo = db.session.query(Aluno).filter(Aluno.id == dados['id']).first()
 
-        db.session.commit()
+            # Atualizando os dados campo por campo
+            novo.nome = dados['nome']
+            novo.email = dados['email']
+            novo.cpf = dados['cpf']
+            novo.idade = dados['idade']
+            novo.senha = dados['senha']
+
+            db.session.commit()
+        elif role == 2:
+            novo = db.session.query(Professor).filter(Professor.id == dados['id']).first()
+
+            novo.nome = dados['nome']
+            novo.email = dados['email']
+            novo.cpf = dados['cpf']
+            novo.idade = dados['idade']
+            novo.senha = dados['senha']
+
+            db.session.commit()
 
     except Exception as e:
         resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
