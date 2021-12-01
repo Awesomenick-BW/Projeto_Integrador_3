@@ -31,30 +31,3 @@ class Rascunho(db.Model):
             "texto": self.texto,
             "idAluno": self.idAluno
         }
-
-
-# Verificando se o diretório atual é o principal
-if __name__ == "__main__":
-
-    # Verificando se já existe um arquivo
-    if os.path.exists(arquivobd):
-        # Se a condição é verdadeira, remova o arquivo
-        os.remove(arquivobd)
-
-    # Criando tabelas
-    db.create_all()
-
-    # Instanciando um objeto
-    nova = Rascunho(caracteres=1346, palavras=274, titulo="Socorro", idAluno=1)
-    
-    # Adicionando no banco de dados
-    db.session.add(nova)
-    db.session.commit()
-
-    # Pegando os valores
-    todas = db.session.query(Rascunho).all()
-
-    # Laço de repetição necessário para imprimir os valores na tela
-    for p in todas:
-        print(p)
-        print(p.json())

@@ -1,17 +1,19 @@
 $ (function() {
 
+    // Comunicação com o backend
     $.ajax({
         url: 'http://localhost:5000/listar_usuarios',
         method: 'GET',
         dataType: 'json',
-        success: listar,
+        success: listar, // Função chamada ao receber resultado positivo
         
-        error: function() {
+        error: function() { // Função chamada ao receber resultado negativo
             alert("Erro ao listar as pessoas")
         }
     })
 
-    function listar (pessoas) {
+    function listar (pessoas) { 
+        // Laço de repetição para a criação de linhas
         for (var i in pessoas) {
             lin = '<tr>' +
             '<td>' + pessoas[i].id + '</td>' +
@@ -22,6 +24,7 @@ $ (function() {
             '<td>' + pessoas[i].role + '</td>' +
             '</tr>';
 
+            // Comunicação com o frontend
             $('#corpoTabelaPessoas').append(lin);
         }
     }

@@ -42,30 +42,3 @@ class Usuario(db.Model):
             "idade" : self.idade,
             "senha" : self.senha
         }
-
-
-# Verificando de o diretório atual é o principal
-if __name__ == "__main__":
-
-    # Verificando de já existe um arquivo
-    if os.path.exists(arquivobd):
-        # Removendo o arquivo
-        os.remove(arquivobd)
-
-    # Criando tabelas
-    db.create_all()
-
-    # Instanciando um objeto
-    nova = Usuario(nome="Alberto", cpf="777.777.777.77", email="alas@gmail.com", idade=18)
-    
-    # Adicionando no bd
-    db.session.add(nova)
-    db.session.commit()
-
-    # Pegando os valores
-    todas = db.session.query(Usuario).all()
-
-    # Laço de repetição necessário para mostrar na tela os valores
-    for p in todas:
-        print(p)
-        print(p.json())

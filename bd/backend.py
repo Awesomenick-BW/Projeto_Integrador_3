@@ -55,7 +55,7 @@ def excluir_pessoa(pessoa_id):
         
         db.session.commit()
 
-    except:
+    except Exception as e:
         resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
 
     resposta.headers.add("Access-Control-Allow-Origin", "*")

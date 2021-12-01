@@ -17,13 +17,7 @@ class Aluno(Usuario):
     __mapper_args__ = {
         'polymorphic_identity':'aluno'
     }
-
-    """
-    # Adicionando mais variáveis
-    escolaridade = db.Column(db.String(50))
-    materias_fracas = db.Column(db.String(50))
-    objetivo = db.Column(db.String(100))
-    """
+    
     # Adicionando um indentificador de aluno
     role = db.Column(db.String(10))
     
@@ -37,37 +31,5 @@ class Aluno(Usuario):
     def json(self):
         json1 = super().json()
         json2 = json1.update({"role": self.role})
-        """
-        json2 = json1.update({
-            "escolaridade": self.escolaridade,
-            "materias_fracas": self.materias_fracas, 
-            "objetivo": self.objetivo
-        })
-        """
 
         return json1
-
-
-# Verificando de o diretório atual é o principal
-if __name__ == "__main__":
-    if os.path.exists(arquivobd):
-        # Se a condição é verdadeira, remova o arquivo
-        os.remove(arquivobd)
-    # Criando tabelas
-    db.create_all()
-
-    # Instanciando um objeto
-    nova = Aluno(nome="Roberto", cpf="888.888.888.88", email="opa@gmail.com", idade=19, 
-    escolaridade="ensino médio completo", materias_fracas="port", objetivo="sobreviver")
-    
-    # Adicionando no bd
-    db.session.add(nova)
-    db.session.commit()
-
-    # Pegando os valores
-    todas = db.session.query(Aluno).all()
-
-    # Laço de repetição necessário para mostrar na tela os valores
-    for p in todas:
-        print(p)
-        print(p.json())
