@@ -2,6 +2,7 @@ from config import *
 from usuario import Usuario
 from aluno import Aluno
 from professor import Professor
+from rascunho import Rascunho
 
 # Método para checar se o backend está operante
 @app.route("/")
@@ -83,7 +84,7 @@ def encontrar_pessoa():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-# curl -d '{"id": 1, "nome": "abacate", "cpf": "123.456.789-10", "email":"abac@gmail.com", "senha":"123", "idade": 20}' -X POST -H "Content-Type:application/json" localhost:5000/update/
+# curl -d '{"id": 1, "idade": 20}' -X POST -H "Content-Type:application/json" localhost:5000/update/
 # Método de UPDATE
 @app.route("/update/<int:role>", methods=["POST"])
 def editar_aluno(role):
@@ -96,21 +97,15 @@ def editar_aluno(role):
             novo = db.session.query(Aluno).filter(Aluno.id == dados['id']).first()
 
             # Atualizando os dados campo por campo
-            novo.nome = dados['nome']
-            novo.email = dados['email']
-            novo.cpf = dados['cpf']
-            novo.idade = dados['idade']
-            novo.senha = dados['senha']
+            for key in dados:
+                setattr(novo, key, dados[key])
 
             db.session.commit()
         elif role == 2:
             novo = db.session.query(Professor).filter(Professor.id == dados['id']).first()
 
-            novo.nome = dados['nome']
-            novo.email = dados['email']
-            novo.cpf = dados['cpf']
-            novo.idade = dados['idade']
-            novo.senha = dados['senha']
+            for key in dados:
+                setattr(novo, key, dados[key])
 
             db.session.commit()
 
@@ -118,5 +113,58 @@ def editar_aluno(role):
         resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
+
+# Apartir daqui são métodos desenvolviemdos para a Redação
+
+# Lista o número de rascunhos e seus dados
+@app.route("/listar_rascunhos")
+def listar_rascunhos():
+    rascunhos = db.session.query(Rascunho).all()
+    retorno = []
+    for p in rascunhos:
+        retorno.append(p.json())
+    resposta = jsonify(retorno)
+    return resposta
+
+# curl -d '{"texto":"123", "comentario": "nenhum", "idAluno": "1"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_rascunho
+# Inclui um rascunho
+@app.route("/incluir_rascunho", methods=['post'])
+def incluir_rascunho():
+    resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
+    dados = request.get_json()
+
+    try:
+        novo = Rascunho(**dados)
+
+        db.create_all()
+        db.session.add(novo)
+        db.session.commit()
+
+    except Exception as e:
+        resposta = jsonify({"resultado": "erro", "detalhes": str(e)})
+
+    resposta.headers.add("Access-control-Allow-Origin", "*")
+    return resposta
+
+# curl -d '{"id": 1, "comentario": "nenhum"}' -X POST -H "Content-Type:application/json" localhost:5000/update_rascunho
+# Método UPDATE para a redação
+@app.route("/update_rascunho", methods=['post'])
+def update_rascunho():
+    resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
+    dados = request.get_json()
+
+    try:
+        novo = db.session.query(Rascunho).filter(Rascunho.id == dados['id']).first()
+
+        for key in dados:
+            setattr(novo, key, dados[key])
+
+        db.session.commit()
+
+    except Exception as e:
+        resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
+    resposta.headers.add("Access-Control-Allow-Origin", "*")
+    return resposta
+
 
 app.run(debug = True)

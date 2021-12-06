@@ -16,6 +16,7 @@ class Rascunho(db.Model):
 
     # Adicionando mais variáveis
     texto = db.Column(db.String(4000))
+    comentario = db.Column(db.String(500))
     idAluno = db.Column(db.Integer, db.ForeignKey('aluno.id'), nullable=False)
     
     """Método que define um caminho que é mais fácil de ler e mostrar 
@@ -29,5 +30,6 @@ class Rascunho(db.Model):
 
         return {
             "texto": self.texto,
+            "comentario": self.comentario,
             "idAluno": self.idAluno
         }
