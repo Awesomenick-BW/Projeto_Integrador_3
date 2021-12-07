@@ -3,32 +3,42 @@
 }
 
 .scn {
-    height: 100%;
+    margin: 0 0 10% 0;
+    height: fit-content;
     justify-content: center;
 }
 
 .post {
-    font-family:'Times New Roman', Times, serif;
+    font-family:'Gill Sans', sans-serif;
     width: 900px;
     padding: 30px;
     position: relative;
     box-shadow: 2px 0.8rem 1rem rgb(0 0 0 / 5%);
     flex-direction: column;
     transform: translate(50%, 50%);
-    overflow: auto;
 }
 
 .post p {
     font-size: 14px;
 }
 
+.post a {
+    text-decoration: none;
+    color: #ffff;
+}
+
 .post button {
     padding: 10px;
     margin-top: 10px;
-    background-color: #ff0268;
+    background-color: #86b0b6;;
     color: #ffff;
     border: none;
     cursor: pointer;
+}
+
+.post button:hover {
+    background-color: #718a8e;
+    font-weight: bold;
 }
 
 .post:not(:last-child) {
@@ -45,10 +55,12 @@
     position: relative;
     margin: 10% 0 5% 35%;
     width: 500px;
+    z-index: 3;
 }
 
 .comment-box h2 {
     font-size: 20px;
+    font-family: 'Gill Sans', sans-serif;
     margin-bottom: 15px;
 }
 
