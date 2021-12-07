@@ -84,16 +84,16 @@ def encontrar_pessoa():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
-# curl -d '{"id": 1, "idade": 20}' -X POST -H "Content-Type:application/json" localhost:5000/update/
+# curl -d '{"id": 1, "idade": 20, "role": "aluno"}' -X POST -H "Content-Type:application/json" localhost:5000/update
 # Método de UPDATE
-@app.route("/update/<int:role>", methods=["POST"])
-def editar_aluno(role):
+@app.route("/update", methods=["POST"])
+def editar_aluno():
     dados = request.get_json()
     resposta = jsonify({"resulatado": "ok", "detalhes": "ok"})
 
     try:
         # Verificando se o role passado é da respectiva pessoa
-        if role == 1:
+        if dados["role"] == "aluno":
             novo = db.session.query(Aluno).filter(Aluno.id == dados['id']).first()
 
             # Atualizando os dados campo por campo
@@ -101,7 +101,7 @@ def editar_aluno(role):
                 setattr(novo, key, dados[key])
 
             db.session.commit()
-        elif role == 2:
+        elif dados["role"] == "professor":
             novo = db.session.query(Professor).filter(Professor.id == dados['id']).first()
 
             for key in dados:

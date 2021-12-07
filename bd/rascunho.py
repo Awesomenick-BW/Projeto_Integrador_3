@@ -15,6 +15,7 @@ class Rascunho(db.Model):
     id = db.Column(db.Integer, primary_key="True")
 
     # Adicionando mais variáveis
+    titulo = db.Column(db.String(30))
     texto = db.Column(db.String(4000))
     comentario = db.Column(db.String(500))
     idAluno = db.Column(db.Integer, db.ForeignKey('aluno.id'), nullable=False)
@@ -29,6 +30,7 @@ class Rascunho(db.Model):
     def json(self):
 
         return {
+            "titulo": self.titulo,
             "texto": self.texto,
             "comentario": self.comentario,
             "idAluno": self.idAluno
