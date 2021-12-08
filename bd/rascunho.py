@@ -18,7 +18,7 @@ class Rascunho(db.Model):
     titulo = db.Column(db.String(30))
     texto = db.Column(db.String(4000))
     comentario = db.Column(db.String(500))
-    idAluno = db.Column(db.Integer, db.ForeignKey('aluno.id'), nullable=False)
+    emailAluno = db.Column(db.String(20), db.ForeignKey('aluno.email'), nullable=False)
     
     """Método que define um caminho que é mais fácil de ler e mostrar 
     os outputs de todos os membros da classe"""
