@@ -126,7 +126,7 @@ def listar_rascunhos():
     resposta = jsonify(retorno)
     return resposta
 
-# curl -d '{"texto":"123", "comentario": "nenhum", "idAluno": "1"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_rascunho
+# curl -d '{"titulo": "Sua mãe", "texto":"123", "comentario": "nenhum", "idAluno": "1"}' -X POST -H "Content-Type:application/json" localhost:5000/incluir_rascunho
 # Inclui um rascunho
 @app.route("/incluir_rascunho", methods=['post'])
 def incluir_rascunho():
@@ -164,6 +164,13 @@ def update_rascunho():
     except Exception as e:
         resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
+    return resposta
+
+@app.route("/encontrar_aluno/<int:idAluno>", methods=['GET'])
+def encontrar_aluno(idAluno):
+    rascunho = db.session.query(Aluno).filter(Rascunho.id == idAluno).first()
+    resposta = jsonify({"email": rascunho.email})
+
     return resposta
 
 

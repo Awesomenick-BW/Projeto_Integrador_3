@@ -10,7 +10,7 @@ $ (function() {
         error: function() { // Função chamada ao receber resultado negativo
             alert("Erro ao listar as pessoas")
         }
-    })
+    });
 
     function listar (pessoas) { 
         // Laço de repetição para a criação de linhas
