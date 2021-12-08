@@ -33,7 +33,7 @@ $ (function() {
             lin = '<div class="post">' + 
             '<h1>' + rascunhos[i].titulo + '</h1>' +
             '<p class="content">' + rascunhos[i].texto + '</p>' +
-            '<p class="content">' + encontrar_aluno(rascunhos[i].idAluno) + '</p>' +
+            '<p class="content">Criado por: ' + encontrar_aluno(rascunhos[i].idAluno) + '</p>' +
             '<button onclick="readMore(this)">Read More</button>' +
             '<a href="#target1"><button>Reply</button></a>' +
             '</div>';
