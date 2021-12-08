@@ -1,0 +1,95 @@
+* {
+    margin: 0;
+}
+
+body {
+    font-family: sans-serif;
+    background: #ebebeb;
+}
+
+.txt-editor-block {
+    margin: 0;
+    height: 1500px;
+}
+
+.main-content {
+    width: 700px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    bottom: 100px;
+    margin-top: 700px;
+    background: #ffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19);
+}
+
+.text-editor-header {
+    background-color: #ecf0f1;
+    padding: 10px;
+}
+
+.text-editor-header .btn {
+    border: none;
+    outline: none;
+    background-color: transparent;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
+.content {
+    height: 500px;
+    border: 1px solid #ecf0f1;
+    border-top: 0px;
+    padding: 20px;
+    overflow-y: scroll;
+    resize: none;
+}
+
+/* Banner css start */
+.wrapper {
+	width: 90%;
+	margin: 0 auto;
+    align-items: center;
+}
+
+.banner-area {
+	width: 100%;
+	height: 500px;
+	position: absolute;
+	background-image: url(https://i.postimg.cc/T3B3WFcv/2.jpg);
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+
+.banner-area h2 {
+    text-align: center;
+	font-size: 70px;
+	font-family: poppins;
+	text-transform: uppercase;
+	color: #fff;
+    transform: translate(0, 200px);
+}
+
+.content-area {
+	width: 100%;
+	position: relative;
+	top: 500px;
+    background: #ebebeb;
+}
+
+.content-area h2 {
+	font-family: poppins;
+	letter-spacing: 4px;
+	padding-top: 30px;
+	font-size: 40px;
+	margin: 0;
+}
+
+.content-area p {
+	padding: 2% 0px;
+	font-family: poppins;
+	line-height: 30px;
+}

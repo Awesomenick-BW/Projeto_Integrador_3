@@ -5,10 +5,177 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portal do Aluno</title>
+    <link rel="stylesheet" type="text/css" href="../css/portal_aluno.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/sidebar.css">
+    <link rel="stylesheet" type="text/css" href="../css/footer.css">
 </head>
 <body>
+    <!--creates a block to support basic general proprerties-->
+    <div class="block-format"> 
+        <input type="checkbox" id="check">
+        <!--header area start-->
+        <header>
+        <label for="check">
+            <i class="fas fa-bars" id="sidebar_btn"></i>
+        </label>
+        <div class="left_area" style="display:inline-flex;">
+            <a href="../src/index.html">
+                <div>
+                    <img class="logo-img" src="../img/Redacione - Logo.png">
+                </div>
+            </a>
+            <h3>Reda<span>cione</span></h3>
+        </div>
+        <div>
+            <a href="#" class="logout_btn" id="btLogout">Logout</a>
+        </div>
+        </header>
+        <!--header area end-->
+        <!--sidebar start-->
+        <div class="sidebar">
+        <div class="centered-profile">
+            <img src="../img/guest_user.jpg" class="profile_image" alt="">
+            <h4>Guest</h4>
+        </div>
+        <a href="index.html"><i class="fas fa-home"></i><span>Home</span></a>
+        <a href="noticias.html"><i class="fas fa-newspaper"></i><span>Notícias</span></a>
+        <a href="#"><i class="fas fa-user-graduate"></i><span>Portal do Aluno</span></a>
+        <a href="#"><i class="fas fa-user-tie"></i><span>Portal do Professor</span></a>
+        <a href="cadastro.html"><i class="fas fa-sign-in-alt"></i><span>Cadastro</span></a>
+        <a href="saiba-mais.html"><i class="fas fa-info-circle"></i><span>Sobre</span></a>
+        </div>
+        <!--sidebar end-->
+    </div>
+    <!--formater block end-->
 
-    
+
+    <!-- Banner start -->
+    <div class="banner-area">
+        <h2>this is banner</h2>
+    </div>
+    <div class="content-area">
+        <div class="wrapper">
+            <h2>content area</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis, esse est iste magni reprehenderit saepe sint!
+                Assumenda consectetur fugit sit tempore. Architecto blanditiis deleniti, est fuga iusto perspiciatis suscipit
+                voluptatibus! Ad alias assumenda autem deleniti esse est excepturi hic itaque, magnam magni nam officia provident
+                quae recusandae reiciendis rem sed. Adipisci animi aut autem deserunt dolore, ea eius error ex facilis inventore
+                ipsum minus modi nihil nostrum nulla, obcaecati porro reprehenderit repudiandae sed sint sunt tempore vero. At
+                dolores doloribus, dolorum ea eaque hic ipsa iusto libero minus natus neque nisi nobis nostrum odio optio pariatur
+                perspiciatis praesentium rerum sapiente.</p>
+        </div>
+    </div>
+    <!-- Banner end -->
+
+    <!-- Rich text editor start -->
+    <div class="main-content">
+        <!-- Text Editor Header -->
+        <div class="text-editor-header">
+            <button type="button" class="btn" data-element="bold">
+                <i class="fa fa-bold"></i>
+            </button>
+            <button type="button" class="btn" data-element="italic">
+                <i class="fa fa-italic"></i>
+            </button>
+            <button type="button" class="btn" data-element="underline">
+                <i class="fa fa-underline"></i>
+            </button>
+            <button type="button" class="btn" data-element="insertUnorderedList">
+                <i class="fa fa-list-ul"></i>
+            </button>
+            <button type="button" class="btn" data-element="insertOrderedList">
+                <i class="fa fa-list-ol"></i>
+            </button>
+            <button type="button" class="btn" data-element="createLink">
+                <i class="fa fa-link"></i>
+            </button>
+            <button type="button" class="btn" data-element="justifyLeft">
+                <i class="fa fa-align-left"></i>
+            </button>
+            <button type="button" class="btn" data-element="justifyCenter">
+                <i class="fa fa-align-center"></i>
+            </button>
+            <button type="button" class="btn" data-element="justifyRight">
+                <i class="fa fa-align-right"></i>
+            </button>
+            <button type="button" class="btn" data-element="justifyFull">
+                <i class="fa fa-align-justify"></i>
+            </button>
+            <button type="button" class="btn" data-element="insertImage">
+                    <i class="fa fa-image"></i>
+            </button>
+        </div>
+        <div class="content" contentEditable="true"></div>
+    </div>
+    <!-- Rich Text Editor end -->
+
+    <!--footer start-->
+    <footer class="footer">
+        <hr id="hr-footer">
+
+        <!--social media icons start-->
+        <div class="icons">
+            <ul class="icons-ul">
+                <li class="icons-li">
+                    <a href="https://www.facebook.com/redacionepi" target="_blank">
+                        <img src="https://findicons.com/files/icons/2830/clean_social_icons/250/facebook.png" width="45px">
+                    </a>
+                </li>
+                <li class="icons-li">
+                    <a href="https://twitter.com/Redacione_pi" target="_blank">
+                        <img src="https://www.lter-europe.net/document-archive/image-gallery/albums/logos/TwitterLogo_55acee.png/image" width="45px">
+                    </a>
+                </li>
+                <li class="icons-li">
+                    <a href="https://www.instagram.com/redacione_pi/" target="_blank">
+                        <img src="https://i.pinimg.com/originals/8b/ed/09/8bed099ffbf95985d5184831b0c05dcc.png" width="45px">
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--social media icons end-->
+
+        <!--linking the website pages-->
+        <div class="page-links">
+            <ul class="page-links-ul">
+                <li class="page-links-li">
+                    <strong>
+                        <a href="../src/index.html">Home</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="../src/noticias.html">Notícias</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Portal do Aluno</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="#">Portal do Professor</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="../src/cadastro.html">Cadastro</a>
+                    </strong>
+                </li>
+                <li class="page-links-li">
+                    <strong>
+                        <a href="../src/saiba-mais.html">Sobre</a>
+                    </strong>
+                </li>
+            </ul>
+        </div>
+    </footer>
+
+
+    <script src="../js/portal_aluno.js"></script>
+    <script src="https://use.fontawesome.com/a31a3f8384.js"></script>
     
 </body>
 </html>
