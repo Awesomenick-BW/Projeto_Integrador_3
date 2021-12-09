@@ -27,12 +27,12 @@ $(function(){
                 // Criação de uma chave para futuras validações
                 if (retorno.resultado == "aluno") {
                     sessionStorage.setItem("role", "aluno");
-                    sessionStorage.setItem("id", retorno.identificador);
+                    sessionStorage.setItem("email", retorno.email);
                     alert("Aluno Logado");
                 }
                 else if (retorno.resultado == "professor"){
                     sessionStorage.setItem("role", "professor");
-                    sessionStorage.setItem("id", retorno.identificador);
+                    sessionStorage.setItem("email", retorno.email);
                     alert("Professor Logado");
                 }  
                 else if (retorno.resultado == "nada"){
@@ -50,7 +50,7 @@ $(function(){
     $("#btLogout").click(function(){
         // Remoção de chaves e relocação 
         sessionStorage.removeItem("role");
-        sessionStorage.removeItem("id");
+        sessionStorage.removeItem("email");
         window.location.reload();
     });
 });

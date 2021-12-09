@@ -13,7 +13,7 @@ CORS(app)
 caminho = os.path.dirname(os.path.abspath(__file__))
 
 # atribuindo lugar e nome do arquivobd
-arquivobd = os.path.join(caminho, "usuario.db")
+arquivobd = os.path.join(caminho, "banco_de_dados.db")
 
 # configs
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + arquivobd

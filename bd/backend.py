@@ -73,14 +73,14 @@ def encontrar_pessoa():
     # Verificação para identificar se as instâncias estão vazias
     if aluno != None:
         value = "aluno"
-        id_ = aluno.id # Enviando id do aluno e a role do mesmo
+        email = aluno.email # Enviando email do aluno e a role do mesmo
     elif professor != None:
         value = "professor"
-        id_ = professor.id # Enviando id do aluno e a role do mesmo
+        email = professor.email # Enviando o email do professor e a role do mesmo
     else:
         value = "nada"
     
-    resposta = jsonify({"resultado": value, "identificador": id_})
+    resposta = jsonify({"resultado": value, "email": email})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
@@ -146,7 +146,7 @@ def incluir_rascunho():
     resposta.headers.add("Access-control-Allow-Origin", "*")
     return resposta
 
-# curl -d '{"id": 1, "comentario": "nenhum"}' -X POST -H "Content-Type:application/json" localhost:5000/update_rascunho
+# curl -d '{"titulo": "Sua mãe", "comentario": "nenhum", "emailAluno": "abac@gmail.com"}' -X POST -H "Content-Type:application/json" localhost:5000/update_rascunho
 # Método UPDATE para a redação
 @app.route("/update_rascunho", methods=['post'])
 def update_rascunho():
@@ -154,7 +154,7 @@ def update_rascunho():
     dados = request.get_json()
 
     try:
-        novo = db.session.query(Rascunho).filter(Rascunho.id == dados['id']).first()
+        novo = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['emailAluno'] and Rascunho.titulo == dados['titulo']).first()
 
         for key in dados:
             setattr(novo, key, dados[key])
@@ -165,15 +165,5 @@ def update_rascunho():
         resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
-    
-"""
-@app.route("/encontrar_aluno/<int:idAluno>", methods=['GET'])
-def encontrar_aluno(idAluno):
-    rascunho = db.session.query(Aluno).filter(Rascunho.id == idAluno).first()
-    resposta = jsonify({"email": rascunho.email})
-
-    return resposta
-"""
-
 
 app.run(debug = True)
