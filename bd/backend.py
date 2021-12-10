@@ -166,4 +166,15 @@ def update_rascunho():
     resposta.headers.add("Access-Control-Allow-Origin", "*")
     return resposta
 
+@app.route("/rascunho_aluno", methods=['post'])
+def rascunho_aluno():
+    dados = request.get_json()
+
+    rascunhos = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['email']).all()
+    retorno = []
+    for p in rascunhos:
+        retorno.append(p.json())
+    resposta = jsonify(retorno)
+    return resposta
+
 app.run(debug = True)

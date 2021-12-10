@@ -3,7 +3,7 @@ $(function(){
         titulo = $("#campoTitulo").val();
         texto = $("#campoTexto").val();
 
-        emailAluno = sessionStorage.email;
+        emailAluno = sessionStorage.getItem("email");
 
         var dados = JSON.stringify({titulo: titulo, texto: texto, emailAluno: emailAluno})
 
