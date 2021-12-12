@@ -171,7 +171,7 @@ def update_rascunho():
 def rascunho_aluno():
     dados = request.get_json()
 
-    rascunhos = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['email']).all()
+    rascunhos = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['emailAluno']).all()
     retorno = []
     for p in rascunhos:
         retorno.append(p.json())
