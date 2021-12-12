@@ -67,8 +67,8 @@ def excluir_pessoa(pessoa_id):
 @app.route("/encontrar_pessoa", methods=['POST'])
 def encontrar_pessoa():
     dados = request.get_json()
-    aluno = db.session.query(Aluno).filter(Aluno.email==dados["email"] and Aluno.senha==dados["senha"]).first()
-    professor = db.session.query(Professor).filter(Professor.email==dados["email"] and Professor.senha==dados["senha"]).first()
+    aluno = db.session.query(Aluno).filter(Aluno.email==dados["email"], Aluno.senha==dados["senha"]).first()
+    professor = db.session.query(Professor).filter(Professor.email==dados["email"], Professor.senha==dados["senha"]).first()
 
     # Verificação para identificar se as instâncias estão vazias
     if aluno != None:
@@ -148,16 +148,14 @@ def incluir_rascunho():
 
 # curl -d '{"titulo": "Sua mãe", "comentario": "nenhum", "emailAluno": "abac@gmail.com"}' -X POST -H "Content-Type:application/json" localhost:5000/update_rascunho
 # Método UPDATE para a redação
-@app.route("/update_rascunho", methods=['post'])
+@app.route("/comentarios", methods=['POST'])
 def update_rascunho():
     resposta = jsonify({"resultado": "ok", "detalhes": "ok"})
     dados = request.get_json()
 
     try:
-        novo = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['emailAluno'] and Rascunho.titulo == dados['titulo']).first()
+        novo = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['emailAluno'], Rascunho.titulo == dados['titulo']).first()
 
-        """for key in dados:
-            setattr(novo, key, dados[key])"""
         novo.comentario = dados['comentario']
 
         db.session.commit()
@@ -165,17 +163,6 @@ def update_rascunho():
     except Exception as e:
         resposta = jsonify({"resulatado": "erro", "detalhes": str(e)})
     resposta.headers.add("Access-Control-Allow-Origin", "*")
-    return resposta
-
-@app.route("/rascunho_aluno", methods=['post'])
-def rascunho_aluno():
-    dados = request.get_json()
-
-    rascunhos = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['emailAluno']).all()
-    retorno = []
-    for p in rascunhos:
-        retorno.append(p.json())
-    resposta = jsonify(retorno)
     return resposta
 
 app.run(debug = True)

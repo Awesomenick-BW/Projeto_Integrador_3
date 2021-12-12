@@ -6,6 +6,12 @@
     margin: 0 0 10% 0;
     height: fit-content;
     justify-content: center;
+    position: relative;
+    padding-top: 6%;
+}
+
+.read {
+    padding-top: 5px;
 }
 
 .post {
@@ -15,13 +21,18 @@
     position: relative;
     box-shadow: 2px 0.8rem 1rem rgb(0 0 0 / 5%);
     flex-direction: column;
-    transform: translate(50%, 50%);
+    margin-right: 20%;
+    margin-left: 20%;
 }
 
 .post p {
     font-size: 14px;
-    line-height: 30px;
-    text-indent: 50px;
+    line-height: 20px;
+    text-align: justify;
+}
+
+.post h1 {
+    padding-bottom: 10px;
 }
 
 .post a {

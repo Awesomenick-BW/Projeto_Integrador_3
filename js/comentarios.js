@@ -7,7 +7,7 @@ $(function() {
         var dados = JSON.stringify({titulo: titulo, comentario: comentario, emailAluno: emailAluno});
 
         $.ajax({
-            url: 'http://localhost:5000/update_rascunho',
+            url: 'http://localhost:5000/comentarios',
             type: 'POST',
             dataType: 'json',
             contentType: 'application/json',

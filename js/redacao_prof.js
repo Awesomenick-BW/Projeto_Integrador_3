@@ -16,9 +16,8 @@ $ (function() {
         for (var i in rascunhos) {
             lin = '<div class="post">' + 
             '<h1>' + rascunhos[i].titulo + '</h1>' +
-            '<p class="content">' + rascunhos[i].texto + '</p>' +
-            '<p class="content">Criado por: ' + rascunhos[i].emailAluno + '</p>' +
-            '<button onclick="readMore(this)">Read More</button>' +
+            '<p class="readP" id="p">' + rascunhos[i].texto + '</p>' +
+            '<p class="read"><strong>Criado por: ' + rascunhos[i].emailAluno + '</strong></p>' +
             '<a href="#target1"><button>Reply</button></a>' +
             '</div>';
             

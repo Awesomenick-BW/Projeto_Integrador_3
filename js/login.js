@@ -8,7 +8,7 @@ $(function(){
         var dados = JSON.stringify({email: email, senha: senha});
 
         // Verificação de dados
-        if ((email == null) || (senha == null)){
+        if ((email == "") || (senha == "")){
             alert("Faltou preencher os campos!");
         } else {
 
