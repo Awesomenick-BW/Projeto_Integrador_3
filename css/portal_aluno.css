@@ -54,9 +54,11 @@ body {
 	width: 100%;
 	height: 500px;
 	position: absolute;
-	background-image: url(https://i.postimg.cc/T3B3WFcv/2.jpg);
-	-webkit-background-size: cover;
+	background-image: url(../img/escreva_redacao.jpg);
+	-webkit-background-size: cover; 
 	background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 	background-position: center center;
 }
 
@@ -65,7 +67,9 @@ body {
 	font-size: 70px;
 	font-family: poppins;
 	text-transform: uppercase;
-	color: #fff;
+    letter-spacing: 10px;
+    text-shadow: 2px 2px 5px goldenrod;
+	color: #142a43;
     transform: translate(0, 200px);
 }
 
@@ -79,7 +83,6 @@ body {
 
 .content-area h2 {
 	font-family: poppins;
-	letter-spacing: 4px;
 	padding-top: 30px;
 	font-size: 40px;
 	margin: 0;
@@ -89,6 +92,7 @@ body {
 	padding: 2% 0px;
 	font-family: poppins;
 	line-height: 30px;
+    text-indent: 50px;
 }
 
 /*inserção do título*/
