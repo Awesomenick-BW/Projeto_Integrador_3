@@ -6,10 +6,6 @@ $ (function() {
         method: 'GET',
         dataType: 'json',
         success: listar, // Função chamada ao receber resultado positivo
-        
-        error: function() { // Função chamada ao receber resultado negativo
-            alert("Erro ao listar as redações")
-        }
     });
 
     function listar (rascunhos) {
