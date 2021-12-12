@@ -156,8 +156,9 @@ def update_rascunho():
     try:
         novo = db.session.query(Rascunho).filter(Rascunho.emailAluno == dados['emailAluno'] and Rascunho.titulo == dados['titulo']).first()
 
-        for key in dados:
-            setattr(novo, key, dados[key])
+        """for key in dados:
+            setattr(novo, key, dados[key])"""
+        novo.comentario = dados['comentario']
 
         db.session.commit()
 

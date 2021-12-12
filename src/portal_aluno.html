@@ -75,7 +75,7 @@
     <div class="essay-box">
         <h2>Escreva sua redação abaixo</h2>
         <form action="#">
-            <input type="text" name="full_name" placeholder="Título da redação...">
+            <input type="text" name="full_name" placeholder="Título da redação..." id="campoTitulo">
         </form>
     </div>
 
@@ -117,11 +117,11 @@
                     <i class="fa fa-image"></i>
             </button>
         </div>
-        <div class="content" contentEditable="true"></div>
+        <div class="content" contentEditable="true" id="campoTexto"></div>
     </div>
     <!-- Rich Text Editor end -->
     <div style="text-align: center;">
-        <button type="submit" class="tch-btn">Enviar</button>
+        <button type="submit" class="tch-btn" id="btAdicionarRedacao">Enviar</button>
     </div><br><br>
 
     <section class="scn" id="rascunhosAluno"></section>
@@ -193,8 +193,10 @@
     <script src="../js/portal_aluno.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://use.fontawesome.com/a31a3f8384.js"></script>
-    <!--<script type="text/javascript" src="../js/validacao.js"></script>
-    <script type="text/javascript" src="../js/login.js"></script>-->
+    <script type="text/javascript" src="../js/validacao.js"></script>
+    <script type="text/javascript" src="../js/login.js"></script>
+    <script type="text/javascript" src="../js/adicionar_redacao.js"></script>
+    <script type="text/javascript" src="../js/listar_redacoes.js"></script>
     
 </body>
 </html>

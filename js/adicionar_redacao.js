@@ -1,12 +1,14 @@
 $(function(){
     $ (document).on("click", "#btAdicionarRedacao", function() {
         titulo = $("#campoTitulo").val();
-        texto = $("#campoTexto").val();
+        // texto = $("#campoTexto").val();
+        var texto = document.getElementById('campoTexto');
+        var text = texto.textContent;
         comentario = "nenhum"
 
         emailAluno = sessionStorage.getItem("email");
 
-        var dados = JSON.stringify({titulo: titulo, texto: texto, comentario: comentario, emailAluno: emailAluno})
+        var dados = JSON.stringify({titulo: titulo, texto: text, comentario: comentario, emailAluno: emailAluno})
 
         $.ajax({
             url: 'http://localhost:5000/incluir_rascunho',
@@ -22,7 +24,7 @@ $(function(){
             if (retorno.resultado == "ok") {
                 alert("Redação incluido com sucesso!");
                 $("#campoTitulo").val("");
-                $("#campoTexto").val("");
+                document.getElementById('campoTexto').innerHTML = "";
             } else {
                 alert(retorno.resultado + ":" + retorno.detalhes);
             }
