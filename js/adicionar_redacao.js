@@ -2,10 +2,11 @@ $(function(){
     $ (document).on("click", "#btAdicionarRedacao", function() {
         titulo = $("#campoTitulo").val();
         texto = $("#campoTexto").val();
+        comentario = "nenhum"
 
         emailAluno = sessionStorage.getItem("email");
 
-        var dados = JSON.stringify({titulo: titulo, texto: texto, emailAluno: emailAluno})
+        var dados = JSON.stringify({titulo: titulo, texto: texto, comentario: comentario, emailAluno: emailAluno})
 
         $.ajax({
             url: 'http://localhost:5000/incluir_rascunho',

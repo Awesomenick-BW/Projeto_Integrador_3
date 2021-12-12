@@ -52,5 +52,6 @@ $(function(){
         sessionStorage.removeItem("role");
         sessionStorage.removeItem("email");
         window.location.reload();
+        alert("Deslogado");
     });
 });
