@@ -138,3 +138,53 @@ body {
 .tch-btn:hover {
     background-color: #718a8e;
 }
+
+.scn {
+    margin: 0 0 10% 0;
+    height: fit-content;
+    justify-content: center;
+}
+
+.post {
+    font-family:'Gill Sans', sans-serif;
+    width: 900px;
+    padding: 30px;
+    position: relative;
+    box-shadow: 2px 0.8rem 1rem rgb(0 0 0 / 5%);
+    flex-direction: column;
+    transform: translate(50%, 50%);
+}
+
+.post p {
+    font-size: 14px;
+    line-height: 30px;
+    text-indent: 50px;
+}
+
+.post a {
+    text-decoration: none;
+    color: #ffff;
+}
+
+.post button {
+    padding: 10px;
+    margin-top: 10px;
+    margin-right: 5px;
+    background-color: #86b0b6;;
+    color: #ffff;
+    border: none;
+    cursor: pointer;
+}
+
+.post button:hover {
+    background-color: #718a8e;
+    font-weight: bold;
+}
+
+.post:not(:last-child) {
+    margin-bottom: 50px;
+}
+
+.hide {
+    display: none;
+}

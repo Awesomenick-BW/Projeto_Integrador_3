@@ -20,6 +20,8 @@
 
 .post p {
     font-size: 14px;
+    line-height: 30px;
+    text-indent: 50px;
 }
 
 .post a {
