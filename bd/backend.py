@@ -63,6 +63,7 @@ def excluir_pessoa(pessoa_id):
     return resposta
 
 # curl -d '{"email":"jo@gmail.com", "senha":"123"}' -X POST -H "Content-Type:application/json" localhost:5000/encontrar_pessoa
+# curl -X POST localhost:5000/update -H "Content-Type: application/json" -d "{\"id\":\"1\",\"idade\":\"20\",\"role\":\"professor\"}"
 # Método para encontrar pessoa
 @app.route("/encontrar_pessoa", methods=['POST'])
 def encontrar_pessoa():
